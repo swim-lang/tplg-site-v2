@@ -127,6 +127,16 @@ a:focus-visible {
   line-height: 1.65;
 }
 
+.positioning .practice-line {
+  max-width: none;
+  margin-top: clamp(18px, 2.5vh, 24px);
+  color: var(--ivory);
+  font-size: clamp(9px, 0.75vw, 11px);
+  letter-spacing: 0.14em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
 .contact-link {
   justify-self: center;
   padding-bottom: 4px;
@@ -207,6 +217,14 @@ a:focus-visible {
     line-height: 1.55;
   }
 
+  .positioning .practice-line {
+    max-width: 32ch;
+    margin-top: 18px;
+    font-size: 9px;
+    letter-spacing: 0.12em;
+    line-height: 1.75;
+  }
+
   .contact-link {
     font-size: 9px;
   }
@@ -233,6 +251,11 @@ a:focus-visible {
     margin-top: 14px;
     font-size: 12px;
     line-height: 1.45;
+  }
+
+  .positioning .practice-line {
+    margin-top: 12px;
+    font-size: 8px;
   }
 }
 

@@ -138,7 +138,7 @@ input[type="checkbox"] {
 }
 
 .preview-panel {
-  background: rgba(255, 255, 255, 0.4);
+  background: var(--ivory);
 }
 
 .section-heading {
@@ -283,13 +283,13 @@ input[type="checkbox"] {
   min-width: 0;
   padding: 10px;
   border: 1px solid var(--line);
-  background: rgba(255, 255, 255, 0.45);
+  background: var(--ivory);
   transition: border-color 160ms ease, background-color 160ms ease;
 }
 
 .layout-option:has(input:checked) {
   border-color: var(--copper);
-  background: var(--paper);
+  background: var(--ivory);
 }
 
 .layout-option input {
@@ -318,7 +318,7 @@ input[type="checkbox"] {
   height: 68px;
   overflow: hidden;
   border: 1px solid rgba(13, 27, 42, 0.12);
-  background: var(--paper);
+  background: var(--ivory);
 }
 
 .layout-swatch i,
@@ -344,7 +344,7 @@ input[type="checkbox"] {
   min-width: 0;
   margin-top: 42px;
   border: 1px solid rgba(13, 27, 42, 0.16);
-  background: var(--paper);
+  background: var(--ivory);
   box-shadow: 0 22px 70px rgba(13, 27, 42, 0.08);
 }
 

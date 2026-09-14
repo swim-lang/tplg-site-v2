@@ -1,10 +1,10 @@
 # TPLG brand, website, and email-signature brief
 
-Status: Working draft for Sean’s review
+Status: Release brief
 
 Last updated: September 14, 2026
 
-Publication status: Local branch only; nothing in this brief or the signature prototype has been published.
+Publication status: Approved for public release. The homepage and unlisted signature utility are maintained together in the V2 production repository.
 
 ## Verified sources
 
@@ -64,9 +64,11 @@ Sean supplied the website mockup on September 14. The implementation direction i
 
 - exact navy, ivory and copper palette from the final brand specification;
 - final ivory one-line lockup in the upper left;
-- People, Practice, Insights and Offices navigation;
+- direct People, Practice, Insights and Offices navigation without desktop hover menus;
 - full-screen `TPLG /` cover animation using the approved seven-word sequence;
+- a slightly reduced central `TPLG /` lockup and a translucent navy sticky header;
 - restrained, text-led sections below the cover using the approved bios and practice labels;
+- ivory, navy and copper only across the public site and signature utility;
 - no filler image and no cookie banner unless tracking is actually introduced.
 
 ## Email-signature requirements
@@ -126,6 +128,3 @@ An add-in is a reasonable phase 2 only if TPLG needs centralized enforcement or 
 1. Choose the preferred default signature layout after reviewing the prototype.
 2. Confirm whether physical address should be prohibited or merely optional in signatures.
 3. Approve the disclaimer verbatim.
-4. Confirm the final public logo host when the generator is published. The prototype is prepared to use the existing Vercel project’s HTTPS asset URL.
-5. Confirm whether the first website release should include the full People, Practice,
-   Insights and Offices sections or launch initially with the animated cover only.

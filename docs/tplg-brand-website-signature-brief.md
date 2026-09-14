@@ -64,8 +64,9 @@ Sean supplied the website mockup on September 14. The implementation direction i
 
 - exact navy, ivory and copper palette from the final brand specification;
 - final ivory one-line lockup in the upper left;
-- dedicated People, Practice, Insights and Offices pages rather than homepage anchor navigation,
-  without desktop hover menus;
+- dedicated People, Practice and Offices pages rather than homepage anchor navigation,
+  without desktop hover menus; the Insights page remains preserved in source but hidden from
+  navigation and search until the firm is ready to publish updates;
 - full-screen `TPLG /` cover animation using the approved seven-word sequence, with the
   `TPLG /` lockup held at a stable left-hand position while each companion word changes
   inside a reserved slot on the right;

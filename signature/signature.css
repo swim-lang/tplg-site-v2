@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "PP Editorial New";
-  src: url("../fonts/PPEditorialNew-Regular.otf") format("opentype");
+  font-family: "Newsreader";
+  src: url("../fonts/Newsreader-Optical.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -14,7 +14,7 @@
   --paper: #ffffff;
   --line: rgba(13, 27, 42, 0.18);
   --muted: #65707a;
-  --serif: "PP Editorial New", Georgia, "Times New Roman", serif;
+  --serif: "Newsreader", Georgia, "Times New Roman", serif;
   --sans: Arial, Helvetica, sans-serif;
 }
 
@@ -93,6 +93,7 @@ input[type="checkbox"] {
 .section-heading h2 {
   margin: 0;
   font-family: var(--serif);
+  font-optical-sizing: auto;
   font-weight: 400;
   letter-spacing: -0.025em;
   line-height: 1;
@@ -246,6 +247,7 @@ input[type="checkbox"] {
   width: 100%;
   margin: 0 0 18px;
   font-family: var(--serif);
+  font-optical-sizing: auto;
   font-size: 26px;
   line-height: 1;
 }
@@ -468,6 +470,7 @@ summary:focus-visible {
 .help-grid h3 {
   margin: 0 0 7px;
   font-family: var(--serif);
+  font-optical-sizing: auto;
   font-size: 21px;
   font-weight: 400;
 }

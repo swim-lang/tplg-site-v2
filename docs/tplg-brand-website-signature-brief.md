@@ -32,6 +32,13 @@ Publication status: Local branch only; nothing in this brief or the signature pr
 
 The lockup has a `3000 × 940` viewBox (`150:47`). For email, use a transparent PNG exported at `600 × 188` and displayed at `300 × 94` or smaller. The SVG itself is suitable for the website, but a hosted PNG is safer across Outlook versions.
 
+### Working typography
+
+- **Newsreader** is the open-source serif used in the signature generator interface and the current starting recommendation for expressive website headings. It was designed by Production Type for on-screen reading and is distributed under the SIL Open Font License 1.1. The self-hosted build retains its optical-size axis so fine details adapt between section headings and the larger display title.
+- The font is self-hosted as WOFF2 rather than loaded from a third-party font service. This removes the old PP Editorial dependency from the new generator, avoids an external request, and keeps the font asset available for the upcoming website exploration.
+- The email signature output itself continues to use Georgia with Times New Roman as a fallback. Outlook support is more reliable when sent email uses common system fonts; the custom font applies to the generator interface, not recipients’ inboxes.
+- Source and license: [Production Type / Newsreader](https://github.com/productiontype/Newsreader).
+
 ## Website direction captured from Tracey
 
 - Lead with a static `TPLG /` and rotate through `campaigns`, `elections`, `advocacy`, `nonprofits`, `ethics`, and `enforcement`, ending on `you`.

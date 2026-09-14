@@ -401,16 +401,23 @@ summary:focus-visible {
 .hero-word-window {
   position: relative;
   display: flex;
-  width: clamp(310px, 33vw, 620px);
+  width: var(--hero-word-width, max-content);
+  max-width: min(62vw, 620px);
   height: clamp(88px, 8vw, 148px);
   align-items: center;
   overflow: hidden;
+  padding-inline: 0.55rem;
   flex: 0 0 auto;
+  transition: width 480ms var(--ease-in-out);
+}
+
+.hero-word-window.is-sizing {
+  transition: none;
 }
 
 .hero-word {
   display: block;
-  width: 100%;
+  width: max-content;
   color: var(--copper);
   font-family: var(--serif);
   font-size: clamp(65px, 6.35vw, 122px);
@@ -984,10 +991,6 @@ summary:focus-visible {
     width: clamp(330px, 39vw, 490px);
   }
 
-  .hero-word-window {
-    width: clamp(280px, 36vw, 440px);
-  }
-
   .firm-content,
   .section-intro,
   .insights-grid {
@@ -1054,7 +1057,7 @@ summary:focus-visible {
   }
 
   .hero-word-window {
-    width: min(92vw, 600px);
+    max-width: min(92vw, 600px);
     height: clamp(68px, 17vw, 105px);
     justify-content: center;
     text-align: center;
@@ -1126,7 +1129,7 @@ summary:focus-visible {
   }
 
   .hero-word-window {
-    width: 100%;
+    max-width: 100%;
   }
 
   .hero-description {

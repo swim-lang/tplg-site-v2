@@ -65,7 +65,9 @@ Sean supplied the website mockup on September 14. The implementation direction i
 - exact navy, ivory and copper palette from the final brand specification;
 - final ivory one-line lockup in the upper left;
 - direct People, Practice, Insights and Offices navigation without desktop hover menus;
-- full-screen `TPLG /` cover animation using the approved seven-word sequence;
+- full-screen `TPLG /` cover animation using the approved seven-word sequence, with the
+  complete visible lockup smoothly re-centered around each word rather than a reserved
+  longest-word slot;
 - a slightly reduced central `TPLG /` lockup and a translucent navy sticky header;
 - restrained, text-led sections below the cover using the approved bios and practice labels;
 - ivory, navy and copper only across the public site and signature utility;

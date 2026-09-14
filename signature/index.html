@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>TPLG Signature Studio</title>
+  <meta
+    name="description"
+    content="Create an Outlook-ready email signature for The Political Law Group."
+  />
+  <link rel="stylesheet" href="signature.css" />
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand-link" href="../" aria-label="The Political Law Group home">
+      <img src="../assets/tplg-main-lockup.svg" alt="TPLG" />
+    </a>
+    <div class="header-copy">
+      <p class="eyebrow">Internal utility</p>
+      <h1>Email Signature Studio</h1>
+      <p>Create a clean, Outlook-ready signature using the new TPLG system.</p>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="editor-panel" aria-labelledby="details-heading">
+      <div class="section-heading">
+        <p class="step-number">01</p>
+        <div>
+          <h2 id="details-heading">Your details</h2>
+          <p>Enter the information you want colleagues and clients to see.</p>
+        </div>
+      </div>
+
+      <form id="signature-form" novalidate>
+        <div class="field-grid">
+          <label class="field field-wide">
+            <span>Full name</span>
+            <input id="full-name" name="fullName" type="text" value="Full Name" autocomplete="name" />
+          </label>
+
+          <label class="field field-wide">
+            <span>Title</span>
+            <input id="title" name="title" type="text" value="Partner" autocomplete="organization-title" />
+          </label>
+
+          <label class="field">
+            <span>Email</span>
+            <input id="email" name="email" type="email" value="name@tpl.group" autocomplete="email" />
+          </label>
+
+          <label class="field">
+            <span>Phone</span>
+            <input id="phone" name="phone" type="tel" value="000.000.0000" autocomplete="tel" />
+          </label>
+
+          <label class="field field-wide">
+            <span>Website</span>
+            <input id="website" name="website" type="text" value="thepoliticallaw.group" inputmode="url" />
+          </label>
+        </div>
+
+        <div class="option-row">
+          <label class="check-option">
+            <input id="include-address" name="includeAddress" type="checkbox" />
+            <span>
+              <strong>Include an office address</strong>
+              <small>Off by default while the D.C. office is unsettled.</small>
+            </span>
+          </label>
+
+          <label class="field address-field" data-address-field hidden>
+            <span>Office address</span>
+            <input id="address" name="address" type="text" placeholder="Street, city, state ZIP" autocomplete="street-address" />
+          </label>
+
+          <label class="check-option">
+            <input id="include-disclaimer" name="includeDisclaimer" type="checkbox" checked />
+            <span>
+              <strong>Include legal disclaimer</strong>
+              <small>Uses the wording from the firm’s current signature.</small>
+            </span>
+          </label>
+        </div>
+
+        <fieldset class="layout-fieldset">
+          <legend>
+            <span class="step-number">02</span>
+            Choose a layout
+          </legend>
+
+          <div class="layout-options">
+            <label class="layout-option">
+              <input type="radio" name="layout" value="balanced" checked />
+              <span class="layout-swatch layout-balanced" aria-hidden="true">
+                <i></i><b></b><em></em>
+              </span>
+              <span><strong>Balanced</strong><small>Logo beside details</small></span>
+            </label>
+
+            <label class="layout-option">
+              <input type="radio" name="layout" value="stacked" />
+              <span class="layout-swatch layout-stacked" aria-hidden="true">
+                <i></i><b></b><em></em>
+              </span>
+              <span><strong>Stacked</strong><small>Logo above details</small></span>
+            </label>
+
+            <label class="layout-option">
+              <input type="radio" name="layout" value="compact" />
+              <span class="layout-swatch layout-compact" aria-hidden="true">
+                <i></i><b></b><em></em>
+              </span>
+              <span><strong>Compact</strong><small>Text-forward and narrow</small></span>
+            </label>
+          </div>
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="preview-panel" aria-labelledby="preview-heading">
+      <div class="section-heading preview-heading">
+        <p class="step-number">03</p>
+        <div>
+          <h2 id="preview-heading">Preview and copy</h2>
+          <p>The signature below is selectable if your browser blocks the copy button.</p>
+        </div>
+      </div>
+
+      <div class="email-preview">
+        <div class="email-toolbar" aria-hidden="true">
+          <span></span><span></span><span></span>
+          <b>New message</b>
+        </div>
+        <div class="email-body">
+          <p>Best,</p>
+          <div id="signature-preview" class="signature-preview" role="group" tabindex="0" aria-label="Generated signature preview"></div>
+        </div>
+      </div>
+
+      <div class="action-row">
+        <button id="copy-button" class="primary-button" type="button">
+          <span>Copy for Outlook</span>
+          <svg viewBox="0 0 20 20" aria-hidden="true"><path d="M6.5 5.5v-2h10v10h-2m-11-8h10v10h-10z" /></svg>
+        </button>
+        <button id="download-button" class="secondary-button" type="button">Download HTML / backup</button>
+      </div>
+
+      <p id="copy-status" class="copy-status" role="status" aria-live="polite"></p>
+
+      <details class="outlook-help">
+        <summary>How to add it to Outlook</summary>
+        <div class="help-grid">
+          <div>
+            <h3>New Outlook or web</h3>
+            <p>Settings → Accounts → Signatures → Add signature → paste → Save. Then choose defaults for new messages and replies.</p>
+          </div>
+          <div>
+            <h3>Classic Outlook</h3>
+            <p>New Email → Signature → Signatures → New → paste → Save. Then choose the signature defaults.</p>
+          </div>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <footer>
+    <p>TPLG <span>/</span> Internal signature utility</p>
+    <p>No details are uploaded or saved.</p>
+  </footer>
+
+  <script src="signature.js"></script>
+</body>
+</html>

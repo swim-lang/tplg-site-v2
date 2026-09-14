@@ -3,38 +3,430 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>The Political Law Group | Political Law. Practical Counsel.</title>
+  <title>The Political Law Group | Political law counsel nationwide</title>
   <meta
     name="description"
     content="The Political Law Group advises clients nationwide at the intersection of law, politics and public policy."
   />
+  <meta name="theme-color" content="#0d1b2a" />
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+  <link rel="stylesheet" href="https://use.typekit.net/nmb4xax.css" />
   <link rel="stylesheet" href="styles.css" />
+  <script>document.documentElement.classList.add("js");</script>
+  <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="validation-page">
-    <div class="locations" aria-label="Locations">
-      <span>Sacramento, California</span>
-      <span>Washington, D.C.</span>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header" id="site-header">
+    <a class="site-brand" href="#top" aria-label="The Political Law Group home">
+      <img src="assets/tplg-wordmark-ivory.svg" alt="The Political Law Group" />
+    </a>
+
+    <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="#people">People</a>
+
+      <div class="nav-item">
+        <a href="#practice">Practice</a>
+        <div class="subnav" role="group" aria-label="Practice areas">
+          <a href="#campaign-finance">Campaign Finance</a>
+          <a href="#elections">Elections</a>
+          <a href="#advocacy">Advocacy</a>
+          <a href="#nonprofits">Nonprofits</a>
+          <a href="#ethics">Ethics</a>
+          <a href="#enforcement">Enforcement</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#insights">Insights</a>
+        <div class="subnav" role="group" aria-label="Insight categories">
+          <a href="#insights">Recent Developments</a>
+          <a href="#insights">Client Alerts</a>
+          <a href="#insights">Perspectives</a>
+        </div>
+      </div>
+
+      <div class="nav-item">
+        <a href="#offices">Offices</a>
+        <div class="subnav subnav-right" role="group" aria-label="Office locations">
+          <a href="#sacramento">Sacramento</a>
+          <a href="#washington">Washington, D.C.</a>
+        </div>
+      </div>
+    </nav>
+
+    <button
+      class="menu-button"
+      id="menu-button"
+      type="button"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <span>Menu</span>
+      <span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+    </button>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <div class="mobile-menu-head">
+      <img src="assets/tplg-wordmark-ivory.svg" alt="The Political Law Group" />
+      <button class="menu-close" id="menu-close" type="button" aria-label="Close menu">
+        <span aria-hidden="true"></span>
+      </button>
     </div>
+    <nav aria-label="Mobile navigation">
+      <a class="mobile-primary" href="#people">People</a>
+      <div class="mobile-group">
+        <a class="mobile-primary" href="#practice">Practice</a>
+        <div>
+          <a href="#campaign-finance">Campaign Finance</a>
+          <a href="#elections">Elections</a>
+          <a href="#advocacy">Advocacy</a>
+          <a href="#nonprofits">Nonprofits</a>
+          <a href="#ethics">Ethics</a>
+          <a href="#enforcement">Enforcement</a>
+        </div>
+      </div>
+      <div class="mobile-group">
+        <a class="mobile-primary" href="#insights">Insights</a>
+        <div>
+          <a href="#insights">Recent Developments</a>
+          <a href="#insights">Client Alerts</a>
+          <a href="#insights">Perspectives</a>
+        </div>
+      </div>
+      <div class="mobile-group">
+        <a class="mobile-primary" href="#offices">Offices</a>
+        <div>
+          <a href="#sacramento">Sacramento</a>
+          <a href="#washington">Washington, D.C.</a>
+        </div>
+      </div>
+    </nav>
+    <a class="mobile-contact" href="mailto:info@tpl.group">info@tpl.group</a>
+  </div>
 
-    <section class="positioning" aria-labelledby="positioning-title">
-      <img
-        class="wordmark"
-        src="assets/Wordmark-White.svg"
-        alt="The Political Law Group"
-      />
+  <main id="main-content">
+    <section class="hero" id="top" aria-labelledby="hero-title">
+      <h1 class="visually-hidden" id="hero-title">
+        TPLG works with campaigns, elections, advocacy organizations, nonprofits and you.
+      </h1>
 
-      <div class="positioning-copy">
-        <h1 id="positioning-title">Political law. Practical Counsel.</h1>
-        <p>
-          The Political Law Group advises clients nationwide at the intersection of law,
-          politics and public policy.
+      <div class="hero-center">
+        <div class="hero-lockup" aria-hidden="true">
+          <img src="assets/tplg-main-lockup-ivory.svg" alt="" />
+          <div class="hero-word-window">
+            <span class="hero-word" id="hero-word">Campaigns</span>
+          </div>
+        </div>
+
+        <p class="hero-description" id="hero-description">
+          We guide candidates, committees, businesses, trade associations, unions, nonprofit
+          organizations and individual donors through complex campaign finance laws at the
+          federal, state and local levels.
         </p>
-        <p class="practice-line">Campaigns · Elections · Advocacy · Nonprofits · Ethics · Enforcement</p>
+      </div>
+
+      <a class="hero-scroll" href="#firm">
+        <span>Explore the firm</span>
+        <svg viewBox="0 0 16 20" aria-hidden="true"><path d="M8 1v17M2 12l6 6 6-6" /></svg>
+      </a>
+    </section>
+
+    <section class="firm section-pad" id="firm" aria-labelledby="firm-title">
+      <div class="section-label reveal">
+        <span>01</span>
+        <p>Why TPLG?</p>
+      </div>
+      <div class="firm-content">
+        <h2 class="display-heading reveal" id="firm-title">
+          Political law is not one of our practice areas. <em>It is our practice.</em>
+        </h2>
+        <div class="firm-copy reveal">
+          <p>
+            The Political Law Group is a national political law firm built to counsel clients
+            operating at the intersection of law, politics and public policy. Our lawyers bring
+            decades of experience advising candidates, public officials, ballot measure campaigns,
+            political committees, nonprofit and advocacy organizations, corporations and major donors.
+          </p>
+          <p>
+            Political matters rarely present purely legal questions. They implicate larger strategic
+            decisions that affect communications, fundraising, coalition-building and organizational
+            priorities. We identify and contextualize risk, then provide clear, practical advice that
+            allows clients to make informed decisions.
+          </p>
+          <p>
+            Our experience on both sides of the regulatory process helps us understand how regulators
+            think, where scrutiny is likely to arise and how decisions made in real time may be viewed
+            later.
+          </p>
+        </div>
       </div>
     </section>
 
-    <a class="contact-link" href="mailto:info@tpl.group">info@tpl.group</a>
+    <section class="practice section-pad" id="practice" aria-labelledby="practice-title">
+      <div class="section-label section-label-light reveal">
+        <span>02</span>
+        <p>Practice</p>
+      </div>
+      <div class="section-intro reveal">
+        <h2 class="display-heading" id="practice-title">Counsel for the full political landscape.</h2>
+        <p>
+          Deep institutional knowledge, modern practical judgment and a clear path through complex
+          federal, state and local rules.
+        </p>
+      </div>
+
+      <div class="practice-list">
+        <article class="practice-row reveal" id="campaign-finance">
+          <span class="practice-number">I.</span>
+          <h3>Campaign Finance</h3>
+          <p>Formation, fundraising, communications, coordination, disclosure and ongoing compliance.</p>
+        </article>
+        <article class="practice-row reveal" id="elections">
+          <span class="practice-number">II.</span>
+          <h3>Elections</h3>
+          <p>Ballot access, ballot measures, candidate materials, disputes and political litigation.</p>
+        </article>
+        <article class="practice-row reveal" id="advocacy">
+          <span class="practice-number">III.</span>
+          <h3>Advocacy</h3>
+          <p>Political and issue advocacy programs structured to operate confidently across jurisdictions.</p>
+        </article>
+        <article class="practice-row reveal" id="nonprofits">
+          <span class="practice-number">IV.</span>
+          <h3>Nonprofits</h3>
+          <p>Tax, campaign finance and election-law guidance for nonprofit political and issue advocacy.</p>
+        </article>
+        <article class="practice-row reveal" id="ethics">
+          <span class="practice-number">V.</span>
+          <h3>Ethics</h3>
+          <p>Lobbying, governmental ethics and disclosure guidance for public and private actors.</p>
+        </article>
+        <article class="practice-row reveal" id="enforcement">
+          <span class="practice-number">VI.</span>
+          <h3>Enforcement</h3>
+          <p>Strategic representation in audits, investigations and agency enforcement matters.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="people section-pad" id="people" aria-labelledby="people-title">
+      <div class="section-label reveal">
+        <span>03</span>
+        <p>People</p>
+      </div>
+      <div class="section-intro section-intro-dark reveal">
+        <h2 class="display-heading" id="people-title">Experienced political counsel, directly involved.</h2>
+        <p>
+          Clients work with people who know their organizations, understand their priorities and are
+          accessible when decisions need to be made.
+        </p>
+      </div>
+
+      <div class="people-grid">
+        <article class="person reveal" id="nicholas-sanders">
+          <img src="assets/nicholas-sanders.webp" alt="Nicholas Sanders" width="1400" height="1400" loading="lazy" />
+          <div class="person-heading">
+            <p>Founding Partner</p>
+            <h3>Nicholas Sanders</h3>
+          </div>
+          <p class="person-intro">
+            Nick advises candidates, public officials, political committees, ballot measure campaigns,
+            nonprofit organizations and political professionals on campaigns, elections, advocacy,
+            lobbying and governmental ethics.
+          </p>
+          <a class="person-email" href="mailto:nicholas@tpl.group">nicholas@tpl.group</a>
+          <details>
+            <summary>Full profile <span aria-hidden="true">+</span></summary>
+            <div class="profile-detail">
+              <p>
+                Nick serves as general counsel to campaigns and political organizations and advises
+                clients throughout the lifecycle of political activity, from formation, fundraising
+                and campaign communications to ballot access, regulatory compliance and enforcement.
+                He has drafted dozens of ballot measures and counseled candidates and public officials
+                throughout California.
+              </p>
+              <p>
+                He also maintains an active election law and litigation practice, including candidate
+                ballot access, ballot designations, candidate statements and challenges to ballot materials.
+              </p>
+              <p>
+                Nick brings more than 15 years of political law experience, including service at the
+                California Fair Political Practices Commission and the Federal Election Commission.
+              </p>
+              <dl>
+                <div><dt>Education</dt><dd>University of California, Davis School of Law, J.D., 2015<br />University of California, Davis, B.A., 2008</dd></div>
+                <div><dt>Admissions</dt><dd>California</dd></div>
+              </dl>
+            </div>
+          </details>
+        </article>
+
+        <article class="person reveal" id="tracey-wigglesworth">
+          <img src="assets/tracey-wigglesworth.webp" alt="Tracey Frazier Wigglesworth" width="1400" height="1400" loading="lazy" />
+          <div class="person-heading">
+            <p>Founding Partner</p>
+            <h3>Tracey Frazier Wigglesworth</h3>
+          </div>
+          <p class="person-intro">
+            Tracey helps clients navigate the rules governing political activity, issue advocacy,
+            campaign finance compliance, lobbying and governmental ethics in California and nationwide.
+          </p>
+          <a class="person-email" href="mailto:tracey@tpl.group">tracey@tpl.group</a>
+          <details>
+            <summary>Full profile <span aria-hidden="true">+</span></summary>
+            <div class="profile-detail">
+              <p>
+                Tracey counsels sophisticated nonprofit and corporate clients on structuring political
+                and issue advocacy programs, multijurisdictional engagement and the compliance implications
+                of operating across organizational, regulatory and geographic lines. She also represents
+                clients in sensitive audits, investigations and enforcement matters.
+              </p>
+              <p>
+                Her practice extends to emerging issues at the intersection of law, politics and technology,
+                including applying election, campaign finance and disclosure laws to new products, business
+                models and methods of political engagement.
+              </p>
+              <p>
+                Before co-founding TPLG, Tracey helped build and oversee one of the country’s largest
+                nonfederal campaign finance compliance programs; advised Fortune 100 corporations on
+                50-state engagement; and investigated, prosecuted, negotiated and resolved more than
+                1,700 matters involving alleged campaign finance, lobbying and government ethics violations.
+              </p>
+              <dl>
+                <div><dt>Education</dt><dd>University of the Pacific, McGeorge School of Law, J.D., 2015; Certificate in Public Law and Policy<br />Loyola Marymount University, B.B.A., 2008</dd></div>
+                <div><dt>Admissions</dt><dd>California</dd></div>
+              </dl>
+            </div>
+          </details>
+        </article>
+
+        <article class="person reveal" id="emma-olson-sharkey">
+          <img src="assets/emma-olson-sharkey.webp" alt="Emma Olson Sharkey" width="1400" height="1400" loading="lazy" />
+          <div class="person-heading">
+            <p>Partner</p>
+            <h3>Emma Olson Sharkey</h3>
+          </div>
+          <p class="person-intro">
+            Emma is a nationally recognized ballot measure and nonprofit tax lawyer who advises clients
+            on campaign finance, tax and election laws governing political and issue advocacy nationwide.
+          </p>
+          <a class="person-email" href="mailto:emma@tpl.group">emma@tpl.group</a>
+          <details>
+            <summary>Full profile <span aria-hidden="true">+</span></summary>
+            <div class="profile-detail">
+              <p>
+                Emma has served as outside counsel to ballot measure efforts in more than 15 states,
+                advising clients from campaign formation and qualification through post-election proceedings.
+                She counsels campaigns, defends clients before state regulatory agencies and advises on
+                ballot measure litigation strategy.
+              </p>
+              <p>
+                She also serves as outside counsel to nonprofit organizations and political committees,
+                helping clients structure and conduct political and issue advocacy consistent with federal
+                tax law and state and federal campaign finance requirements.
+              </p>
+              <p>
+                Her work and commentary have appeared in or been cited by The New York Times, The Washington
+                Post, NBC News, TIME, The Hill, Slate, CBS News Radio and Democracy Docket.
+              </p>
+              <dl>
+                <div><dt>Education</dt><dd>Northwestern Law School, J.D., 2015<br />University of Minnesota, B.A., 2008</dd></div>
+                <div><dt>Admissions</dt><dd>District of Columbia<br />Illinois</dd></div>
+              </dl>
+            </div>
+          </details>
+        </article>
+
+        <article class="person reveal" id="kristen-lippstreu">
+          <img src="assets/kristen-lippstreu.webp" alt="Kristen Lippstreu" width="1400" height="1400" loading="lazy" />
+          <div class="person-heading">
+            <p>Director, Political Compliance</p>
+            <h3>Kristen Lippstreu</h3>
+          </div>
+          <p class="person-intro">
+            Kristen works with clients to build and manage sophisticated campaign finance, lobbying and
+            political compliance programs across federal, state and local jurisdictions.
+          </p>
+          <a class="person-email" href="mailto:kristen@tpl.group">kristen@tpl.group</a>
+          <details>
+            <summary>Full profile <span aria-hidden="true">+</span></summary>
+            <div class="profile-detail">
+              <p>
+                Kristen brings more than a decade of experience navigating complex reporting regimes,
+                with particular depth in California political law and multijurisdictional compliance.
+                Her experience spans PAC administration, major ballot measure campaigns and institution-wide
+                political compliance.
+              </p>
+              <p>
+                She develops systems and processes that allow highly regulated organizations to engage in
+                political activity at scale, translating legal requirements into practical clearance
+                procedures, reporting systems and internal controls.
+              </p>
+              <p>
+                Kristen’s combination of technical expertise, operational experience and practical judgment
+                helps clients treat political compliance as an integrated part of a broader engagement program.
+              </p>
+              <dl>
+                <div><dt>Education</dt><dd>University of Oregon, B.A., 2012</dd></div>
+              </dl>
+            </div>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <section class="insights section-pad" id="insights" aria-labelledby="insights-title">
+      <div class="section-label reveal">
+        <span>04</span>
+        <p>Insights</p>
+      </div>
+      <div class="insights-grid">
+        <div class="insights-heading reveal">
+          <h2 class="display-heading" id="insights-title">The political landscape keeps moving.</h2>
+          <p>Updates and analysis from The Political Law Group will be published here.</p>
+        </div>
+        <div class="insight-categories reveal" role="list" aria-label="Forthcoming insight categories">
+          <div role="listitem"><span>01</span><p>Recent Developments</p></div>
+          <div role="listitem"><span>02</span><p>Client Alerts</p></div>
+          <div role="listitem"><span>03</span><p>Perspectives</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="offices section-pad" id="offices" aria-labelledby="offices-title">
+      <div class="section-label section-label-light reveal">
+        <span>05</span>
+        <p>Offices</p>
+      </div>
+      <h2 class="display-heading reveal" id="offices-title">Two coasts. One national practice.</h2>
+      <div class="office-grid">
+        <div class="office reveal" id="sacramento">
+          <span>01</span>
+          <p>Sacramento</p>
+          <small>California</small>
+        </div>
+        <div class="office reveal" id="washington">
+          <span>02</span>
+          <p>Washington</p>
+          <small>District of Columbia</small>
+        </div>
+      </div>
+      <div class="contact-block reveal">
+        <p>Start a conversation.</p>
+        <a href="mailto:info@tpl.group">info@tpl.group</a>
+      </div>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <img src="assets/tplg-wordmark-navy.svg" alt="The Political Law Group" />
+    <div>
+      <p>Political law counsel nationwide.</p>
+      <p>© 2026 The Political Law Group. All rights reserved.</p>
+    </div>
+  </footer>
 </body>
 </html>

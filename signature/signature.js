@@ -6,8 +6,8 @@
     copper: "#B65A2A",
     copperText: "#8E421C",
     muted: "#5E6670",
-    logoPreview: "../assets/tplg-main-lockup.png",
-    logoProduction: "https://tplg-site.vercel.app/assets/tplg-main-lockup.png",
+    logoPreview: "../assets/tplg-main-lockup-email.png",
+    logoProduction: "https://tplg-site.vercel.app/assets/tplg-main-lockup-email.png",
     firm: "The Political Law Group LLP",
     disclaimer:
       "THIS EMAIL IS CONFIDENTIAL AND MAY BE LEGALLY PRIVILEGED. IF YOU HAVE RECEIVED IT IN ERROR, PLEASE NOTIFY US IMMEDIATELY AND THEN DELETE IT. ANY TAX ADVICE IS NOT INTENDED TO AND CANNOT BE USED FOR AVOIDING IRS PENALTIES OR FOR RECOMMENDING ANY TAX-RELATED TRANSACTION OR MATTER TO A THIRD PARTY."
@@ -257,6 +257,7 @@
 
   form.addEventListener("input", renderPreview);
   form.addEventListener("change", renderPreview);
+  form.addEventListener("submit", (event) => event.preventDefault());
   copyButton.addEventListener("click", copySignature);
   downloadButton.addEventListener("click", downloadSignature);
 

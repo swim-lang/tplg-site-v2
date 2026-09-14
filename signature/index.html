@@ -9,12 +9,14 @@
     name="description"
     content="Create an Outlook-ready email signature for The Political Law Group."
   />
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+  <link rel="stylesheet" href="https://use.typekit.net/nmb4xax.css" />
   <link rel="stylesheet" href="signature.css" />
 </head>
 <body>
   <header class="site-header">
     <a class="brand-link" href="../" aria-label="The Political Law Group home">
-      <img src="../assets/tplg-main-lockup.svg" alt="TPLG" />
+      <img src="../assets/tplg-main-lockup-navy.svg" alt="TPLG" />
     </a>
     <div class="header-copy">
       <p class="eyebrow">Internal utility</p>
@@ -34,6 +36,7 @@
       </div>
 
       <form id="signature-form" novalidate>
+        <button class="visually-hidden" type="submit">Update signature preview</button>
         <div class="field-grid">
           <label class="field field-wide">
             <span>Full name</span>
@@ -72,7 +75,7 @@
 
           <label class="field address-field" data-address-field hidden>
             <span>Office address</span>
-            <input id="address" name="address" type="text" placeholder="Street, city, state ZIP" autocomplete="street-address" />
+            <input id="address" name="address" type="text" placeholder="Street, city, state ZIP" autocomplete="address-line1" />
           </label>
 
           <label class="check-option">

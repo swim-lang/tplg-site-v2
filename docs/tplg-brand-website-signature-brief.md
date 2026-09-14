@@ -10,7 +10,8 @@ Publication status: Local branch only; nothing in this brief or the signature pr
 
 - [Missive: Branding, Website, Etc.](https://mail.missiveapp.com/#inbox/conversations/29e99532-a061-4ee0-9784-0076bc52d86d), September 3–14, 2026. Tracey Wigglesworth, Sean Ashlow, Nicholas Sanders, and Emma Olson Sharkey.
 - [Missive: Email sig is this?](https://mail.missiveapp.com/#inbox/conversations/0392f51e-062f-4b93-8904-8566381d22d6), September 10, 2026. Tracey Wigglesworth and Sean Ashlow; the forwarded source originated with Emma Olson Sharkey.
-- Supplied brand asset: `MainLockup.svg` (received September 14, 2026).
+- Supplied brand assets: `MainLockup.svg`, the final TPLG asset package, and `Web.png`
+  (received September 14, 2026).
 - Existing site repository: `swim-lang/tplg-site-v2`; current public deployment remains unchanged while the new direction is developed.
 
 ## What is approved
@@ -28,16 +29,20 @@ Publication status: Local branch only; nothing in this brief or the signature pr
 | --- | --- | --- |
 | Primary navy | `#0D1B2A` | SVG path fill |
 | Accent copper | `#B65A2A` | SVG slash fill |
-| Working warm white | `#F7F4EE` | UI support color, not encoded in the SVG |
+| Ivory | `#F5F3EF` | Final supplied brand specification |
 
 The lockup has a `3000 × 940` viewBox (`150:47`). For email, use a transparent PNG exported at `600 × 188` and displayed at `300 × 94` or smaller. The SVG itself is suitable for the website, but a hosted PNG is safer across Outlook versions.
 
-### Working typography
+### Final typography
 
-- **Newsreader** is the open-source serif used in the signature generator interface and the current starting recommendation for expressive website headings. It was designed by Production Type for on-screen reading and is distributed under the SIL Open Font License 1.1. The self-hosted build retains its optical-size axis so fine details adapt between section headings and the larger display title.
-- The font is self-hosted as WOFF2 rather than loaded from a third-party font service. This removes the old PP Editorial dependency from the new generator, avoids an external request, and keeps the font asset available for the upcoming website exploration.
-- The email signature output itself continues to use Georgia with Times New Roman as a fallback. Outlook support is more reliable when sent email uses common system fonts; the custom font applies to the generator interface, not recipients’ inboxes.
-- Source and license: [Production Type / Newsreader](https://github.com/productiontype/Newsreader).
+- **Adobe Caslon Pro Regular and Italic** are the primary website faces. Sean supplied
+  Adobe Fonts kit `nmb4xax`; its CSS family is `adobe-caslon-pro` and it includes only
+  400 normal and 400 italic, so the implementation does not synthesize heavier Caslon weights.
+- **Inter Regular** is the secondary website and interface face. The Latin WOFF2 is
+  self-hosted under the SIL Open Font License 1.1.
+- The signature generator interface uses the same Adobe Caslon and Inter pairing. The
+  copied signature output intentionally continues to use Georgia/Times and Arial/Helvetica
+  fallbacks because Outlook cannot reliably preserve linked web fonts.
 
 ## Website direction captured from Tracey
 
@@ -55,7 +60,14 @@ The lockup has a `3000 × 940` viewBox (`150:47`). For email, use a transparent 
 - Replace or improve the phrase `other participants in the political process`.
 - Staff headshots and a September 3 bio document are attached to the primary Missive conversation.
 
-The full website redesign remains intentionally unimplemented until Sean supplies the planned mockup and confirms the current content direction.
+Sean supplied the website mockup on September 14. The implementation direction is now:
+
+- exact navy, ivory and copper palette from the final brand specification;
+- final ivory one-line lockup in the upper left;
+- People, Practice, Insights and Offices navigation;
+- full-screen `TPLG /` cover animation using the approved seven-word sequence;
+- restrained, text-led sections below the cover using the approved bios and practice labels;
+- no filler image and no cookie banner unless tracking is actually introduced.
 
 ## Email-signature requirements
 
@@ -111,9 +123,9 @@ An add-in is a reasonable phase 2 only if TPLG needs centralized enforcement or 
 
 ## Decisions still needed
 
-1. Confirm that the supplied `MainLockup.svg` includes Tracey’s final straight-top `T` correction.
-2. Choose the preferred default signature layout after reviewing the prototype.
-3. Confirm whether physical address should be prohibited or merely optional in signatures.
-4. Approve the disclaimer verbatim.
-5. Confirm the final public logo host when the generator is published. The prototype is prepared to use the existing Vercel project’s HTTPS asset URL.
-6. Supply the website mockup and identify which content from the current temporary page should survive into the new site.
+1. Choose the preferred default signature layout after reviewing the prototype.
+2. Confirm whether physical address should be prohibited or merely optional in signatures.
+3. Approve the disclaimer verbatim.
+4. Confirm the final public logo host when the generator is published. The prototype is prepared to use the existing Vercel project’s HTTPS asset URL.
+5. Confirm whether the first website release should include the full People, Practice,
+   Insights and Offices sections or launch initially with the animated cover only.

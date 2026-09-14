@@ -1,6 +1,6 @@
 @font-face {
-  font-family: "Newsreader";
-  src: url("../fonts/Newsreader-Optical.woff2") format("woff2");
+  font-family: "Inter";
+  src: url("../fonts/Inter-Regular.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
   font-display: swap;
@@ -10,12 +10,12 @@
   --navy: #0d1b2a;
   --copper: #b65a2a;
   --copper-text: #8e421c;
-  --warm-white: #f7f4ee;
+  --warm-white: #f5f3ef;
   --paper: #ffffff;
   --line: rgba(13, 27, 42, 0.18);
   --muted: #65707a;
-  --serif: "Newsreader", Georgia, "Times New Roman", serif;
-  --sans: Arial, Helvetica, sans-serif;
+  --serif: "adobe-caslon-pro", Georgia, "Times New Roman", serif;
+  --sans: "Inter", Arial, Helvetica, sans-serif;
 }
 
 * {
@@ -38,6 +38,18 @@ body {
 
 [hidden] {
   display: none !important;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
 }
 
 button,
@@ -84,7 +96,7 @@ input[type="checkbox"] {
   margin: 0 0 14px;
   color: var(--copper-text);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.16em;
   text-transform: uppercase;
 }
@@ -171,7 +183,7 @@ input[type="checkbox"] {
 
 .field > span {
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.11em;
   text-transform: uppercase;
 }
@@ -224,6 +236,7 @@ input[type="checkbox"] {
 
 .check-option strong {
   font-size: 13px;
+  font-weight: 400;
 }
 
 .check-option small,
@@ -298,6 +311,7 @@ input[type="checkbox"] {
 
 .layout-option strong {
   font-size: 12px;
+  font-weight: 400;
 }
 
 .layout-swatch {
@@ -399,7 +413,7 @@ input[type="checkbox"] {
   border: 1px solid var(--navy);
   border-radius: 0;
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
   transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
 }
 
@@ -445,7 +459,7 @@ summary:focus-visible {
   margin: 12px 0 0;
   color: var(--copper-text);
   font-size: 12px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .outlook-help {
@@ -457,7 +471,7 @@ summary:focus-visible {
 .outlook-help summary {
   padding: 18px 0;
   font-size: 13px;
-  font-weight: 700;
+  font-weight: 400;
 }
 
 .help-grid {
@@ -488,7 +502,7 @@ footer {
   padding: 24px clamp(28px, 5vw, 72px);
   border-top: 1px solid var(--line);
   font-size: 10px;
-  font-weight: 700;
+  font-weight: 400;
   letter-spacing: 0.12em;
   text-transform: uppercase;
 }

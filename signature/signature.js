@@ -4,8 +4,7 @@
   const BRAND = {
     navy: "#0D1B2A",
     copper: "#B65A2A",
-    copperText: "#8E421C",
-    muted: "#5E6670",
+    ivory: "#F5F3EF",
     logoPreview: "../assets/tplg-main-lockup-email.png",
     logoProduction: "https://tplg-site.vercel.app/assets/tplg-main-lockup-email.png",
     firm: "The Political Law Group LLP",
@@ -80,12 +79,12 @@
         `<a href="${escapeHtml(state.website.href)}" style="color:${BRAND.navy};text-decoration:none;white-space:nowrap;">${escapeHtml(state.website.display)}</a>`
       );
     }
-    return items.join(`<span style="color:${BRAND.copperText};">${separator}</span>`);
+    return items.join(`<span style="color:${BRAND.copper};">${separator}</span>`);
   }
 
   function addressRow(state) {
     if (!state.includeAddress || !state.address) return "";
-    return `<tr><td style="padding:6px 0 0;color:${BRAND.muted};font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;">${escapeHtml(state.address)}</td></tr>`;
+    return `<tr><td style="padding:6px 0 0;color:${BRAND.navy};font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;">${escapeHtml(state.address)}</td></tr>`;
   }
 
   function disclaimer(state) {
@@ -93,7 +92,7 @@
     return `
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;">
         <tr>
-          <td style="padding:14px 0 0;color:#5E6670;font-family:Arial,Helvetica,sans-serif;font-size:8px;line-height:12px;letter-spacing:0.01em;">
+          <td style="padding:14px 0 0;color:${BRAND.navy};font-family:Arial,Helvetica,sans-serif;font-size:8px;line-height:12px;letter-spacing:0.01em;">
             ${BRAND.disclaimer}
           </td>
         </tr>
@@ -102,7 +101,7 @@
 
   function renderBalanced(state, logoUrl) {
     return `
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;background:#FFFFFF;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;">
         <tr>
           <td width="190" valign="top" style="width:190px;padding:2px 22px 2px 0;border-right:2px solid ${BRAND.copper};vertical-align:top;">
             <img src="${escapeHtml(logoUrl)}" width="168" height="53" alt="TPLG" style="display:block;width:168px;height:53px;border:0;outline:none;text-decoration:none;" />
@@ -110,8 +109,8 @@
           <td valign="top" style="padding:0 0 0 22px;vertical-align:top;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
               <tr><td style="padding:0;color:${BRAND.navy};font-family:Georgia,'Times New Roman',serif;font-size:19px;line-height:24px;font-weight:700;">${escapeHtml(state.fullName || "Full Name")}</td></tr>
-              <tr><td style="padding:3px 0 0;color:${BRAND.copperText};font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;">${escapeHtml(state.title || "Title")}</td></tr>
-              <tr><td style="padding:4px 0 0;color:${BRAND.muted};font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;">${BRAND.firm}</td></tr>
+              <tr><td style="padding:3px 0 0;color:${BRAND.copper};font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;">${escapeHtml(state.title || "Title")}</td></tr>
+              <tr><td style="padding:4px 0 0;color:${BRAND.navy};font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:16px;">${BRAND.firm}</td></tr>
               <tr><td style="padding:10px 0 0;color:${BRAND.navy};font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:18px;">${contactRows(state)}</td></tr>
               ${addressRow(state)}
             </table>
@@ -123,7 +122,7 @@
 
   function renderStacked(state, logoUrl) {
     return `
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;background:#FFFFFF;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;">
         <tr>
           <td style="padding:0 0 13px;border-bottom:2px solid ${BRAND.copper};">
             <img src="${escapeHtml(logoUrl)}" width="210" height="66" alt="TPLG" style="display:block;width:210px;height:66px;border:0;outline:none;text-decoration:none;" />
@@ -133,7 +132,7 @@
           <td style="padding:14px 0 0;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
               <tr><td style="padding:0;color:${BRAND.navy};font-family:Georgia,'Times New Roman',serif;font-size:20px;line-height:25px;font-weight:700;">${escapeHtml(state.fullName || "Full Name")}</td></tr>
-              <tr><td style="padding:3px 0 0;color:${BRAND.copperText};font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;">${escapeHtml(state.title || "Title")}&nbsp;&nbsp;<span style="color:#69727B;">/</span>&nbsp;&nbsp;${BRAND.firm}</td></tr>
+              <tr><td style="padding:3px 0 0;color:${BRAND.copper};font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;font-weight:700;letter-spacing:0.11em;text-transform:uppercase;">${escapeHtml(state.title || "Title")}&nbsp;&nbsp;<span style="color:${BRAND.navy};">/</span>&nbsp;&nbsp;${BRAND.firm}</td></tr>
               <tr><td style="padding:9px 0 0;color:${BRAND.navy};font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:18px;">${contactRows(state, "&nbsp;/&nbsp;")}</td></tr>
               ${addressRow(state)}
             </table>
@@ -145,19 +144,19 @@
 
   function renderCompact(state, logoUrl) {
     return `
-      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;background:#FFFFFF;">
+      <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;">
         <tr>
           <td valign="top" style="padding:0;vertical-align:top;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
               <tr><td style="padding:0;color:${BRAND.navy};font-family:Georgia,'Times New Roman',serif;font-size:18px;line-height:23px;font-weight:700;">${escapeHtml(state.fullName || "Full Name")}</td></tr>
-              <tr><td style="padding:2px 0 0;color:${BRAND.copperText};font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">${escapeHtml(state.title || "Title")}</td></tr>
+              <tr><td style="padding:2px 0 0;color:${BRAND.copper};font-family:Arial,Helvetica,sans-serif;font-size:10px;line-height:14px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;">${escapeHtml(state.title || "Title")}</td></tr>
               <tr><td style="padding:8px 0 0;color:${BRAND.navy};font-family:Arial,Helvetica,sans-serif;font-size:11px;line-height:18px;">${contactRows(state, "&nbsp;/&nbsp;")}</td></tr>
               ${addressRow(state)}
             </table>
           </td>
           <td width="144" valign="top" align="right" style="width:144px;padding:1px 0 0 18px;vertical-align:top;text-align:right;">
             <img src="${escapeHtml(logoUrl)}" width="126" height="39" alt="TPLG" style="display:block;width:126px;height:39px;margin-left:auto;border:0;outline:none;text-decoration:none;" />
-            <div style="margin-top:8px;color:${BRAND.muted};font-family:Arial,Helvetica,sans-serif;font-size:9px;line-height:13px;white-space:nowrap;">${BRAND.firm}</div>
+            <div style="margin-top:8px;color:${BRAND.navy};font-family:Arial,Helvetica,sans-serif;font-size:9px;line-height:13px;white-space:nowrap;">${BRAND.firm}</div>
           </td>
         </tr>
       </table>
@@ -238,7 +237,7 @@
   function downloadSignature() {
     const state = readState();
     const html = renderSignature(state, BRAND.logoProduction);
-    const documentHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>TPLG email signature</title></head><body style="margin:24px;background:#FFFFFF;">${html}</body></html>`;
+    const documentHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>TPLG email signature</title></head><body style="margin:24px;color:${BRAND.navy};">${html}</body></html>`;
     const blob = new Blob([documentHtml], { type: "text/html;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");

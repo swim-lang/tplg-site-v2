@@ -9,11 +9,9 @@
 :root {
   --navy: #0d1b2a;
   --copper: #b65a2a;
-  --copper-text: #8e421c;
-  --warm-white: #f5f3ef;
-  --paper: #ffffff;
+  --ivory: #f5f3ef;
   --line: rgba(13, 27, 42, 0.18);
-  --muted: #65707a;
+  --muted: rgba(13, 27, 42, 0.68);
   --serif: "adobe-caslon-pro", Georgia, "Times New Roman", serif;
   --sans: "Inter", Arial, Helvetica, sans-serif;
 }
@@ -24,7 +22,7 @@
 
 html {
   color: var(--navy);
-  background: var(--warm-white);
+  background: var(--ivory);
   font-family: var(--sans);
   line-height: 1.5;
 }
@@ -33,7 +31,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   margin: 0;
-  background: var(--warm-white);
+  background: var(--ivory);
 }
 
 [hidden] {
@@ -94,7 +92,7 @@ input[type="checkbox"] {
 .eyebrow,
 .step-number {
   margin: 0 0 14px;
-  color: var(--copper-text);
+  color: var(--navy);
   font-size: 11px;
   font-weight: 400;
   letter-spacing: 0.16em;
@@ -356,20 +354,20 @@ input[type="checkbox"] {
   gap: 7px;
   min-height: 44px;
   padding: 0 16px;
-  border-bottom: 1px solid #e7e7e7;
-  background: #fafafa;
+  border-bottom: 1px solid rgba(13, 27, 42, 0.14);
+  background: var(--ivory);
 }
 
 .email-toolbar span {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #d8d8d8;
+  background: rgba(13, 27, 42, 0.2);
 }
 
 .email-toolbar b {
   margin-left: 7px;
-  color: #6b6b6b;
+  color: var(--muted);
   font-size: 11px;
   font-weight: 400;
 }
@@ -379,8 +377,8 @@ input[type="checkbox"] {
   min-height: 430px;
   padding: clamp(28px, 3vw, 42px);
   overflow-x: auto;
-  color: #2a2a2a;
-  background: #fff;
+  color: var(--navy);
+  background: var(--ivory);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
 }
@@ -421,7 +419,7 @@ input[type="checkbox"] {
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  color: #fff;
+  color: var(--ivory);
   background: var(--navy);
 }
 
@@ -443,7 +441,7 @@ input[type="checkbox"] {
 }
 
 .secondary-button:hover {
-  color: #fff;
+  color: var(--ivory);
   background: var(--navy);
 }
 
@@ -457,7 +455,7 @@ summary:focus-visible {
 .copy-status {
   min-height: 24px;
   margin: 12px 0 0;
-  color: var(--copper-text);
+  color: var(--navy);
   font-size: 12px;
   font-weight: 400;
 }
@@ -517,7 +515,7 @@ footer span {
 
 @media (max-width: 1050px) {
   body {
-    background: var(--warm-white);
+    background: var(--ivory);
   }
 
   .site-header,

@@ -4,7 +4,6 @@
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const siteHeader = document.querySelector("#site-header");
   const heroLockup = document.querySelector(".hero-lockup");
-  const heroWordWindow = document.querySelector(".hero-word-window");
   const heroWord = document.querySelector("#hero-word");
   const heroDescription = document.querySelector("#hero-description");
   const heroScroll = document.querySelector(".hero-scroll");
@@ -56,25 +55,9 @@
     siteHeader.classList.toggle("is-scrolled", window.scrollY > 28);
   }
 
-  function syncHeroWordWidth(animate = true) {
-    const windowStyle = window.getComputedStyle(heroWordWindow);
-    const horizontalPadding =
-      Number.parseFloat(windowStyle.paddingLeft) + Number.parseFloat(windowStyle.paddingRight);
-    const width = Math.ceil(heroWord.getBoundingClientRect().width + horizontalPadding);
-
-    if (!animate) heroWordWindow.classList.add("is-sizing");
-    heroWordWindow.style.setProperty("--hero-word-width", `${width}px`);
-
-    if (!animate) {
-      heroWordWindow.getBoundingClientRect();
-      heroWordWindow.classList.remove("is-sizing");
-    }
-  }
-
-  function setHeroState(state, animateWidth = true) {
+  function setHeroState(state) {
     heroWord.textContent = state.word;
     heroDescription.textContent = state.description;
-    syncHeroWordWidth(animateWidth);
   }
 
   function transitionHero(index) {
@@ -115,7 +98,7 @@
     }, 2100);
 
     if (reducedMotion.matches) {
-      setHeroState(sequence[sequence.length - 1], false);
+      setHeroState(sequence[sequence.length - 1]);
       return;
     }
 
@@ -149,7 +132,6 @@
 
   window.addEventListener("resize", () => {
     if (window.innerWidth > 900 && !mobileMenu.hidden) setMenu(false);
-    window.requestAnimationFrame(() => syncHeroWordWidth(false));
   });
 
   window.addEventListener("scroll", setHeaderState, { passive: true });
@@ -172,7 +154,5 @@
     revealItems.forEach((item) => observer.observe(item));
   }
 
-  syncHeroWordWidth(false);
-  document.fonts?.ready.then(() => syncHeroWordWidth(false));
-  startHero();
+  if (heroLockup && heroWord && heroDescription && heroScroll) startHero();
 })();

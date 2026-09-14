@@ -224,7 +224,8 @@ summary:focus-visible {
 }
 
 .desktop-nav > a:hover::after,
-.desktop-nav > a:focus-visible::after {
+.desktop-nav > a:focus-visible::after,
+.desktop-nav > a[aria-current="page"]::after {
   transform: scaleX(1);
   transform-origin: left;
 }
@@ -351,6 +352,10 @@ summary:focus-visible {
   font-style: italic;
 }
 
+.mobile-primary[aria-current="page"] {
+  color: var(--copper);
+}
+
 /* Hero */
 
 .hero {
@@ -401,23 +406,16 @@ summary:focus-visible {
 .hero-word-window {
   position: relative;
   display: flex;
-  width: var(--hero-word-width, max-content);
-  max-width: min(62vw, 620px);
+  width: clamp(310px, 33vw, 620px);
   height: clamp(88px, 8vw, 148px);
   align-items: center;
   overflow: hidden;
-  padding-inline: 0.55rem;
   flex: 0 0 auto;
-  transition: width 480ms var(--ease-in-out);
-}
-
-.hero-word-window.is-sizing {
-  transition: none;
 }
 
 .hero-word {
   display: block;
-  width: max-content;
+  width: 100%;
   color: var(--copper);
   font-family: var(--serif);
   font-size: clamp(65px, 6.35vw, 122px);
@@ -491,33 +489,33 @@ summary:focus-visible {
   stroke-width: 1.25;
 }
 
-.js .site-header,
-.js .hero-lockup,
-.js .hero-description,
-.js .hero-scroll {
+.js .home-page .site-header,
+.js .home-page .hero-lockup,
+.js .home-page .hero-description,
+.js .home-page .hero-scroll {
   opacity: 0;
 }
 
-.js .site-header.is-ready {
+.js .home-page .site-header.is-ready {
   animation: hero-arrive 700ms ease-out 100ms forwards;
 }
 
-.js .hero-lockup.is-ready {
+.js .home-page .hero-lockup.is-ready {
   animation: lockup-arrive 1250ms var(--ease-out) 180ms forwards;
 }
 
-.js .hero-description.is-ready {
+.js .home-page .hero-description.is-ready {
   animation: hero-arrive 700ms var(--ease-out) 980ms forwards;
 }
 
-.js .hero-scroll.is-ready {
+.js .home-page .hero-scroll.is-ready {
   animation: hero-arrive 700ms ease-out 1350ms forwards;
 }
 
-.js .site-header.has-arrived,
-.js .hero-lockup.has-arrived,
-.js .hero-description.has-arrived,
-.js .hero-scroll.has-arrived {
+.js .home-page .site-header.has-arrived,
+.js .home-page .hero-lockup.has-arrived,
+.js .home-page .hero-description.has-arrived,
+.js .home-page .hero-scroll.has-arrived {
   opacity: 1;
   transform: none;
 }
@@ -530,6 +528,92 @@ summary:focus-visible {
 @keyframes lockup-arrive {
   from { opacity: 0; transform: translateY(26px) scale(0.94); }
   to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Interior pages */
+
+.subpage .site-header {
+  border-bottom: 1px solid var(--line-light);
+  background: rgba(13, 27, 42, 0.9);
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+}
+
+.page-hero {
+  position: relative;
+  display: flex;
+  min-height: min(68svh, 720px);
+  align-items: flex-end;
+  overflow: hidden;
+  padding: clamp(170px, 16vw, 250px) var(--page-gutter) clamp(80px, 8vw, 130px);
+  color: var(--ivory);
+  background: var(--navy);
+}
+
+.page-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 22% 75%, rgba(245, 243, 239, 0.04), transparent 44%);
+  pointer-events: none;
+}
+
+.page-hero-inner {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 1480px);
+  margin: 0 auto;
+}
+
+.page-kicker {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin: 0 0 clamp(28px, 3vw, 46px);
+  color: var(--ivory-soft);
+  font-size: 11px;
+  letter-spacing: 0.17em;
+  text-transform: uppercase;
+}
+
+.page-kicker::before {
+  content: "";
+  width: 44px;
+  height: 1px;
+  background: var(--copper);
+}
+
+.page-title {
+  max-width: 1120px;
+  margin: 0;
+  font-family: var(--serif);
+  font-size: clamp(64px, 8.8vw, 152px);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 0.92;
+  text-wrap: balance;
+}
+
+.page-title em {
+  color: var(--copper);
+  font-weight: 400;
+}
+
+.page-lede {
+  max-width: 680px;
+  margin: clamp(28px, 3vw, 44px) 0 0;
+  color: var(--ivory-soft);
+  font-size: clamp(15px, 1.15vw, 18px);
+  line-height: 1.65;
+}
+
+.subpage-content {
+  border-top: 1px solid var(--line-light);
+}
+
+.subpage-content.people,
+.subpage-content.insights {
+  border-top-color: var(--line-dark);
 }
 
 /* Firm */
@@ -598,11 +682,6 @@ summary:focus-visible {
   padding: clamp(27px, 2.3vw, 42px) 0;
   border-top: 1px solid var(--line-light);
   scroll-margin-top: 110px;
-  transition: padding-left 350ms var(--ease-out), color 250ms ease;
-}
-
-.practice-row:hover {
-  padding-left: 18px;
 }
 
 .practice-number {
@@ -683,6 +762,7 @@ summary:focus-visible {
   text-transform: uppercase;
 }
 
+.person-heading h2,
 .person-heading h3 {
   margin: 0;
   font-family: var(--serif);
@@ -819,6 +899,7 @@ summary:focus-visible {
   align-items: baseline;
   padding: 22px 0;
   border-top: 1px solid var(--line-dark);
+  scroll-margin-top: 110px;
 }
 
 .insight-categories span {
@@ -991,6 +1072,10 @@ summary:focus-visible {
     width: clamp(330px, 39vw, 490px);
   }
 
+  .hero-word-window {
+    width: clamp(280px, 36vw, 440px);
+  }
+
   .firm-content,
   .section-intro,
   .insights-grid {
@@ -1057,6 +1142,7 @@ summary:focus-visible {
   }
 
   .hero-word-window {
+    width: min(92vw, 600px);
     max-width: min(92vw, 600px);
     height: clamp(68px, 17vw, 105px);
     justify-content: center;
@@ -1105,6 +1191,20 @@ summary:focus-visible {
     margin-bottom: 52px;
   }
 
+  .page-hero {
+    min-height: 560px;
+    padding: 138px 22px 72px;
+  }
+
+  .page-title {
+    font-size: clamp(56px, 17vw, 78px);
+    line-height: 0.96;
+  }
+
+  .page-lede {
+    font-size: 15px;
+  }
+
   .site-header,
   .mobile-menu {
     padding-right: 22px;
@@ -1129,6 +1229,7 @@ summary:focus-visible {
   }
 
   .hero-word-window {
+    width: 100%;
     max-width: 100%;
   }
 
@@ -1156,10 +1257,6 @@ summary:focus-visible {
     padding: 24px 0;
   }
 
-  .practice-row:hover {
-    padding-left: 0;
-  }
-
   .practice-row h3 {
     font-size: clamp(34px, 10vw, 48px);
   }
@@ -1168,6 +1265,7 @@ summary:focus-visible {
     gap: 10px;
   }
 
+  .person-heading h2,
   .person-heading h3 {
     text-align: left;
   }
@@ -1261,10 +1359,10 @@ summary:focus-visible {
     transition-duration: 0.01ms !important;
   }
 
-  .js .site-header,
-  .js .hero-lockup,
-  .js .hero-description,
-  .js .hero-scroll,
+  .js .home-page .site-header,
+  .js .home-page .hero-lockup,
+  .js .home-page .hero-description,
+  .js .home-page .hero-scroll,
   .js .reveal {
     opacity: 1;
     transform: none;

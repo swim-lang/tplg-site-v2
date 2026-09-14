@@ -697,9 +697,11 @@ summary:focus-visible {
 
 .person > img {
   width: 100%;
+  height: auto;
   aspect-ratio: 1 / 1;
   border: 1px solid var(--line-dark);
   object-fit: cover;
+  object-position: center;
   filter: saturate(0.88);
   transition: filter 350ms ease;
 }

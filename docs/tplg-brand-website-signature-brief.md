@@ -69,6 +69,8 @@ Sean supplied the website mockup on September 14. The implementation direction i
   complete visible lockup smoothly re-centered around each word rather than a reserved
   longest-word slot;
 - a slightly reduced central `TPLG /` lockup and a translucent navy sticky header;
+- a site-wide `1200 × 630` social preview using the official ivory-and-copper `TPLG /`
+  lockup centered on solid navy, with no portrait or additional copy;
 - restrained, text-led sections below the cover using the approved bios and practice labels;
 - ivory, navy and copper only across the public site and signature utility;
 - no filler image and no cookie banner unless tracking is actually introduced.

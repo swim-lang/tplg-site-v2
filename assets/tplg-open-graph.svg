@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">The Political Law Group</title>
+  <desc id="desc">The TPLG logo in ivory and copper on a navy background.</desc>
+  <rect width="1200" height="630" fill="#0d1b2a" />
+  <image
+    href="tplg-main-lockup-ivory.svg"
+    x="300"
+    y="221"
+    width="600"
+    height="188"
+    preserveAspectRatio="xMidYMid meet"
+  />
+</svg>

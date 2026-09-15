@@ -5,8 +5,6 @@
   const siteHeader = document.querySelector("#site-header");
   const heroLockup = document.querySelector(".hero-lockup");
   const heroWord = document.querySelector("#hero-word");
-  const heroDescription = document.querySelector("#hero-description");
-  const heroScroll = document.querySelector(".hero-scroll");
   const menuButton = document.querySelector("#menu-button");
   const menuClose = document.querySelector("#menu-close");
   const mobileMenu = document.querySelector("#mobile-menu");
@@ -14,58 +12,27 @@
   const footer = document.querySelector(".site-footer");
 
   const sequence = [
-    {
-      word: "Campaigns",
-      description:
-        "We guide candidates, committees, businesses, trade associations, unions, nonprofit organizations and individual donors through complex campaign finance laws at the federal, state and local levels."
-    },
-    {
-      word: "Elections",
-      description:
-        "We advise candidates, campaigns and political organizations on ballot access, election administration, disputes and the rules governing the electoral process."
-    },
-    {
-      word: "Advocacy",
-      description:
-        "We help corporations, coalitions and advocacy organizations structure political and issue advocacy across jurisdictions."
-    },
-    {
-      word: "Nonprofits",
-      description:
-        "We counsel nonprofit organizations on the tax, campaign finance and election laws governing political and issue advocacy."
-    },
-    {
-      word: "Ethics",
-      description:
-        "We advise public officials, organizations and political professionals on lobbying, governmental ethics and related disclosure obligations."
-    },
-    {
-      word: "Enforcement",
-      description:
-        "We represent clients in audits, investigations and enforcement matters before federal, state and local regulators."
-    },
-    {
-      word: "You",
-      description:
-        "The Political Law Group advises clients nationwide at the intersection of law, politics and public policy."
-    }
+    "Campaigns",
+    "Elections",
+    "Advocacy",
+    "Nonprofits",
+    "Ethics",
+    "Enforcement",
+    "You"
   ];
 
   function setHeaderState() {
     siteHeader.classList.toggle("is-scrolled", window.scrollY > 28);
   }
 
-  function setHeroState(state) {
-    heroWord.textContent = state.word;
-    heroDescription.textContent = state.description;
+  function setHeroState(word) {
+    heroWord.textContent = word;
   }
 
   function transitionHero(index) {
     if (index >= sequence.length) return;
 
     heroWord.classList.add("is-exiting");
-    heroDescription.classList.add("is-switching");
-
     window.setTimeout(() => {
       setHeroState(sequence[index]);
       heroWord.classList.remove("is-exiting");
@@ -74,7 +41,6 @@
       requestAnimationFrame(() => {
         requestAnimationFrame(() => {
           heroWord.classList.remove("is-entering");
-          heroDescription.classList.remove("is-switching");
         });
       });
 
@@ -87,11 +53,8 @@
   function startHero() {
     siteHeader.classList.add("is-ready");
     heroLockup.classList.add("is-ready");
-    heroDescription.classList.add("is-ready");
-    heroScroll.classList.add("is-ready");
-
     window.setTimeout(() => {
-      [siteHeader, heroLockup, heroDescription, heroScroll].forEach((element) => {
+      [siteHeader, heroLockup].forEach((element) => {
         element.classList.remove("is-ready");
         element.classList.add("has-arrived");
       });
@@ -154,5 +117,5 @@
     revealItems.forEach((item) => observer.observe(item));
   }
 
-  if (heroLockup && heroWord && heroDescription && heroScroll) startHero();
+  if (heroLockup && heroWord) startHero();
 })();

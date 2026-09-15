@@ -56,7 +56,8 @@
   <link rel="stylesheet" href="https://use.typekit.net/nmb4xax.css" />
   <link rel="stylesheet" href="styles.css" />
   <script>document.documentElement.classList.add("js");</script>
-  <script src="script.js" defer></script>
+  <script type="module" src="content.js"></script>
+  <script type="module" src="script.js"></script>
 </head>
 <body class="home-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -96,23 +97,23 @@
       <div class="mobile-group">
         <a class="mobile-primary" href="practice/">Practice</a>
         <div>
-          <a href="practice/#campaign-finance">Campaign Finance</a>
-          <a href="practice/#elections">Elections</a>
-          <a href="practice/#advocacy">Advocacy</a>
-          <a href="practice/#nonprofits">Nonprofits</a>
-          <a href="practice/#ethics">Ethics</a>
-          <a href="practice/#enforcement">Enforcement</a>
+          <a href="practice/#campaign-finance" data-content-key="practice.campaign-finance.name">Campaign Finance</a>
+          <a href="practice/#elections" data-content-key="practice.elections.name">Elections</a>
+          <a href="practice/#advocacy" data-content-key="practice.advocacy.name">Advocacy</a>
+          <a href="practice/#nonprofits" data-content-key="practice.nonprofits.name">Nonprofits</a>
+          <a href="practice/#ethics" data-content-key="practice.ethics.name">Ethics</a>
+          <a href="practice/#enforcement" data-content-key="practice.enforcement.name">Enforcement</a>
         </div>
       </div>
       <div class="mobile-group">
         <a class="mobile-primary" href="offices/">Offices</a>
         <div>
-          <a href="offices/#sacramento">Sacramento</a>
-          <a href="offices/#washington">Washington, D.C.</a>
+          <a href="offices/#sacramento" data-content-key="offices.sacramento.city">Sacramento</a>
+          <a href="offices/#washington" data-content-key="offices.washington.city" data-content-suffix=", D.C.">Washington, D.C.</a>
         </div>
       </div>
     </nav>
-    <a class="mobile-contact" href="mailto:info@tpl.group">info@tpl.group</a>
+    <a class="mobile-contact" href="mailto:info@tpl.group" data-content-key="offices.contact.email" data-content-href="email">info@tpl.group</a>
   </div>
 
   <main id="main-content">
@@ -129,56 +130,14 @@
           </div>
         </div>
 
-        <p class="hero-description" id="hero-description">
-          We guide candidates, committees, businesses, trade associations, unions, nonprofit
-          organizations and individual donors through complex campaign finance laws at the
-          federal, state and local levels.
-        </p>
-      </div>
-
-      <a class="hero-scroll" href="#firm">
-        <span>Explore the firm</span>
-        <svg viewBox="0 0 16 20" aria-hidden="true"><path d="M8 1v17M2 12l6 6 6-6" /></svg>
-      </a>
-    </section>
-
-    <section class="firm section-pad" id="firm" aria-labelledby="firm-title">
-      <div class="section-label reveal">
-        <span>01</span>
-        <p>Why TPLG?</p>
-      </div>
-      <div class="firm-content">
-        <h2 class="display-heading reveal" id="firm-title">
-          Political law is not one of our practice areas. <em>It is our practice.</em>
-        </h2>
-        <div class="firm-copy reveal">
-          <p>
-            The Political Law Group is a national political law firm built to counsel clients
-            operating at the intersection of law, politics and public policy. Our lawyers bring
-            decades of experience advising candidates, public officials, ballot measure campaigns,
-            political committees, nonprofit and advocacy organizations, corporations and major donors.
-          </p>
-          <p>
-            Political matters rarely present purely legal questions. They implicate larger strategic
-            decisions that affect communications, fundraising, coalition-building and organizational
-            priorities. We identify and contextualize risk, then provide clear, practical advice that
-            allows clients to make informed decisions.
-          </p>
-          <p>
-            Our experience on both sides of the regulatory process helps us understand how regulators
-            think, where scrutiny is likely to arise and how decisions made in real time may be viewed
-            later.
-          </p>
-        </div>
       </div>
     </section>
-
   </main>
 
   <footer class="site-footer">
     <img src="assets/tplg-wordmark-navy.svg" alt="The Political Law Group" />
     <div>
-      <p>Political law counsel nationwide.</p>
+      <p data-content-key="global.footer.tagline">Political law counsel nationwide.</p>
       <p>© 2026 The Political Law Group. All rights reserved.</p>
     </div>
   </footer>

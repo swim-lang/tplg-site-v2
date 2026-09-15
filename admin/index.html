@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Content Editor | The Political Law Group</title>
+  <meta name="theme-color" content="#0d1b2a" />
+  <link rel="icon" type="image/svg+xml" href="../assets/tplg-slash-favicon.svg" />
+  <link rel="preconnect" href="https://use.typekit.net" crossorigin />
+  <link rel="stylesheet" href="https://use.typekit.net/nmb4xax.css" />
+  <link rel="stylesheet" href="admin.css" />
+  <script type="module" src="admin.js"></script>
+</head>
+<body>
+  <a class="admin-skip-link" href="#editor-main">Skip to editor</a>
+
+  <header class="admin-header">
+    <a href="../" aria-label="The Political Law Group home">
+      <img src="../assets/tplg-wordmark-ivory.svg" alt="The Political Law Group" />
+    </a>
+    <p>Content editor</p>
+  </header>
+
+  <main id="editor-main">
+    <section class="login-panel" id="login-panel" aria-labelledby="login-title">
+      <div>
+        <p class="eyebrow">Private access</p>
+        <h1 id="login-title">Sign in to edit the site.</h1>
+        <p class="login-intro">
+          Enter the shared administrator password. Changes made here update the visible
+          website copy immediately after saving.
+        </p>
+      </div>
+
+      <form id="login-form">
+        <label>
+          <span>Password</span>
+          <input id="login-password" name="password" type="password" autocomplete="current-password" required />
+        </label>
+        <button type="submit">Sign in</button>
+        <p class="form-status" id="login-status" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="setup-panel" id="setup-panel" hidden aria-labelledby="setup-title">
+      <div>
+        <p class="eyebrow">Setup required</p>
+        <h1 id="setup-title">The editor is ready to connect.</h1>
+        <p>
+          The public site is still using its built-in copy. Connect the dedicated content project
+          before signing in.
+        </p>
+      </div>
+    </section>
+
+    <section class="editor-shell" id="editor-shell" hidden aria-label="Website content editor">
+      <aside class="editor-sidebar">
+        <div>
+          <p class="eyebrow">Editing as</p>
+          <p class="editor-email" id="editor-email"></p>
+        </div>
+        <nav id="editor-navigation" aria-label="Content sections"></nav>
+        <button class="text-button" id="sign-out-button" type="button">Sign out</button>
+      </aside>
+
+      <div class="editor-workspace">
+        <div class="editor-toolbar">
+          <div>
+            <p class="eyebrow">Website copy</p>
+            <h1 id="section-title">People</h1>
+          </div>
+          <div class="toolbar-actions">
+            <a id="view-page-link" href="../people/" target="_blank" rel="noreferrer">View page</a>
+            <button id="save-button" type="button">Save changes</button>
+          </div>
+        </div>
+
+        <form id="content-form" class="content-form"></form>
+        <p class="save-status" id="save-status" aria-live="polite"></p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

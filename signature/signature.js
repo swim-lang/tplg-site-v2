@@ -5,8 +5,8 @@
     navy: "#0D1B2A",
     copper: "#B65A2A",
     ivory: "#F5F3EF",
-    logoPreview: "../assets/tplg-main-lockup-email.png",
-    logoProduction: "https://tplg-site.vercel.app/assets/tplg-main-lockup-email.png",
+    logoPreview: "/assets/tplg-main-lockup-email.png",
+    logoProduction: "https://thepoliticallaw.group/assets/tplg-main-lockup-email.png",
     firm: "The Political Law Group LLP",
     disclaimer:
       "THIS EMAIL IS CONFIDENTIAL AND MAY BE LEGALLY PRIVILEGED. IF YOU HAVE RECEIVED IT IN ERROR, PLEASE NOTIFY US IMMEDIATELY AND THEN DELETE IT. ANY TAX ADVICE IS NOT INTENDED TO AND CANNOT BE USED FOR AVOIDING IRS PENALTIES OR FOR RECOMMENDING ANY TAX-RELATED TRANSACTION OR MATTER TO A THIRD PARTY."
@@ -169,10 +169,31 @@
     return renderBalanced(state, logoUrl);
   }
 
+  function syncPreviewScale() {
+    if (!window.matchMedia("(max-width: 640px)").matches) {
+      preview.style.removeProperty("--signature-preview-scale");
+      preview.style.removeProperty("--signature-preview-margin");
+      return;
+    }
+
+    const emailBody = preview.closest(".email-body");
+    const bodyStyle = window.getComputedStyle(emailBody);
+    const availableWidth =
+      emailBody.clientWidth -
+      Number.parseFloat(bodyStyle.paddingLeft) -
+      Number.parseFloat(bodyStyle.paddingRight);
+    const scale = Math.min(0.58, availableWidth / 520);
+    const collapsedHeight = preview.scrollHeight * (scale - 1);
+
+    preview.style.setProperty("--signature-preview-scale", String(scale));
+    preview.style.setProperty("--signature-preview-margin", `${collapsedHeight}px`);
+  }
+
   function renderPreview() {
     const state = readState();
     addressField.hidden = !state.includeAddress;
     preview.innerHTML = renderSignature(state, BRAND.logoPreview);
+    syncPreviewScale();
     copyStatus.textContent = "";
   }
 
@@ -259,6 +280,7 @@
   form.addEventListener("submit", (event) => event.preventDefault());
   copyButton.addEventListener("click", copySignature);
   downloadButton.addEventListener("click", downloadSignature);
+  window.addEventListener("resize", syncPreviewScale);
 
   renderPreview();
 })();

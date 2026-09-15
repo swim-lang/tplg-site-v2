@@ -56,7 +56,8 @@
   <link rel="stylesheet" href="https://use.typekit.net/nmb4xax.css" />
   <link rel="stylesheet" href="../styles.css" />
   <script>document.documentElement.classList.add("js");</script>
-  <script src="../script.js" defer></script>
+  <script type="module" src="../content.js"></script>
+  <script type="module" src="../script.js"></script>
 </head>
 <body class="subpage">
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -98,50 +99,53 @@
       <div class="mobile-group">
         <a class="mobile-primary" href="../practice/">Practice</a>
         <div>
-          <a href="../practice/#campaign-finance">Campaign Finance</a>
-          <a href="../practice/#elections">Elections</a>
-          <a href="../practice/#advocacy">Advocacy</a>
-          <a href="../practice/#nonprofits">Nonprofits</a>
-          <a href="../practice/#ethics">Ethics</a>
-          <a href="../practice/#enforcement">Enforcement</a>
+          <a href="../practice/#campaign-finance" data-content-key="practice.campaign-finance.name">Campaign Finance</a>
+          <a href="../practice/#elections" data-content-key="practice.elections.name">Elections</a>
+          <a href="../practice/#advocacy" data-content-key="practice.advocacy.name">Advocacy</a>
+          <a href="../practice/#nonprofits" data-content-key="practice.nonprofits.name">Nonprofits</a>
+          <a href="../practice/#ethics" data-content-key="practice.ethics.name">Ethics</a>
+          <a href="../practice/#enforcement" data-content-key="practice.enforcement.name">Enforcement</a>
         </div>
       </div>
       <div class="mobile-group">
         <a class="mobile-primary" href="../offices/" aria-current="page">Offices</a>
         <div>
-          <a href="#sacramento">Sacramento</a>
-          <a href="#washington">Washington, D.C.</a>
+          <a href="#sacramento" data-content-key="offices.sacramento.city">Sacramento</a>
+          <a href="#washington" data-content-key="offices.washington.city" data-content-suffix=", D.C.">Washington, D.C.</a>
         </div>
       </div>
     </nav>
-    <a class="mobile-contact" href="mailto:info@tpl.group">info@tpl.group</a>
+    <a class="mobile-contact" href="mailto:info@tpl.group" data-content-key="offices.contact.email" data-content-href="email">info@tpl.group</a>
   </div>
 
   <main id="main-content">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="page-hero-inner">
         <p class="page-kicker">Offices</p>
-        <h1 class="page-title" id="page-title">Two coasts. <em>One national practice.</em></h1>
-        <p class="page-lede">Sacramento, California · Washington, D.C.</p>
+        <h1 class="page-title" id="page-title">
+          <span data-content-key="offices.heading.main">Two coasts.</span>
+          <em data-content-key="offices.heading.emphasis">One national practice.</em>
+        </h1>
+        <p class="page-lede" data-content-key="offices.lede">Sacramento, California · Washington, D.C.</p>
       </div>
     </section>
 
     <section class="offices section-pad subpage-content" aria-labelledby="office-locations-title">
       <h2 class="visually-hidden" id="office-locations-title">Contact and office locations</h2>
       <div class="contact-block reveal">
-        <p>Start a conversation.</p>
-        <a href="mailto:info@tpl.group">info@tpl.group</a>
+        <p data-content-key="offices.contact.label">Start a conversation.</p>
+        <a href="mailto:info@tpl.group" data-content-key="offices.contact.email" data-content-href="email">info@tpl.group</a>
       </div>
       <div class="office-grid">
         <div class="office reveal" id="sacramento">
           <span>01</span>
-          <p>Sacramento</p>
-          <small>California</small>
+          <p data-content-key="offices.sacramento.city">Sacramento</p>
+          <small data-content-key="offices.sacramento.region">California</small>
         </div>
         <div class="office reveal" id="washington">
           <span>02</span>
-          <p>Washington</p>
-          <small>District of Columbia</small>
+          <p data-content-key="offices.washington.city">Washington</p>
+          <small data-content-key="offices.washington.region">District of Columbia</small>
         </div>
       </div>
     </section>
@@ -150,7 +154,7 @@
   <footer class="site-footer">
     <img src="../assets/tplg-wordmark-navy.svg" alt="The Political Law Group" />
     <div>
-      <p>Political law counsel nationwide.</p>
+      <p data-content-key="global.footer.tagline">Political law counsel nationwide.</p>
       <p>© 2026 The Political Law Group. All rights reserved.</p>
     </div>
   </footer>

@@ -597,9 +597,9 @@ footer span {
   .signature-preview {
     width: 520px;
     min-width: 0;
-    transform: scale(0.58);
+    transform: scale(var(--signature-preview-scale, 0.58));
     transform-origin: top left;
-    margin-bottom: -64px;
+    margin-bottom: var(--signature-preview-margin, -64px);
   }
 
   .action-row,

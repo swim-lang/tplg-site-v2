@@ -56,9 +56,10 @@
   <link rel="stylesheet" href="https://use.typekit.net/nmb4xax.css" />
   <link rel="stylesheet" href="../styles.css" />
   <script>document.documentElement.classList.add("js");</script>
-  <script src="../script.js" defer></script>
+  <script type="module" src="../content.js"></script>
+  <script type="module" src="../script.js"></script>
 </head>
-<body class="subpage">
+<body class="subpage people-index-page">
   <a class="skip-link" href="#main-content">Skip to content</a>
 
   <header class="site-header" id="site-header">
@@ -98,188 +99,66 @@
       <div class="mobile-group">
         <a class="mobile-primary" href="../practice/">Practice</a>
         <div>
-          <a href="../practice/#campaign-finance">Campaign Finance</a>
-          <a href="../practice/#elections">Elections</a>
-          <a href="../practice/#advocacy">Advocacy</a>
-          <a href="../practice/#nonprofits">Nonprofits</a>
-          <a href="../practice/#ethics">Ethics</a>
-          <a href="../practice/#enforcement">Enforcement</a>
+          <a href="../practice/#campaign-finance" data-content-key="practice.campaign-finance.name">Campaign Finance</a>
+          <a href="../practice/#elections" data-content-key="practice.elections.name">Elections</a>
+          <a href="../practice/#advocacy" data-content-key="practice.advocacy.name">Advocacy</a>
+          <a href="../practice/#nonprofits" data-content-key="practice.nonprofits.name">Nonprofits</a>
+          <a href="../practice/#ethics" data-content-key="practice.ethics.name">Ethics</a>
+          <a href="../practice/#enforcement" data-content-key="practice.enforcement.name">Enforcement</a>
         </div>
       </div>
       <div class="mobile-group">
         <a class="mobile-primary" href="../offices/">Offices</a>
         <div>
-          <a href="../offices/#sacramento">Sacramento</a>
-          <a href="../offices/#washington">Washington, D.C.</a>
+          <a href="../offices/#sacramento" data-content-key="offices.sacramento.city">Sacramento</a>
+          <a href="../offices/#washington" data-content-key="offices.washington.city" data-content-suffix=", D.C.">Washington, D.C.</a>
         </div>
       </div>
     </nav>
-    <a class="mobile-contact" href="mailto:info@tpl.group">info@tpl.group</a>
+    <a class="mobile-contact" href="mailto:info@tpl.group" data-content-key="offices.contact.email" data-content-href="email">info@tpl.group</a>
   </div>
 
   <main id="main-content">
-    <section class="page-hero" aria-labelledby="page-title">
-      <div class="page-hero-inner">
+    <section class="people people-index section-pad" aria-labelledby="page-title">
+      <div class="people-index-intro">
         <p class="page-kicker">People</p>
-        <h1 class="page-title" id="page-title">Experienced political counsel, <em>directly involved.</em></h1>
-        <p class="page-lede">
+        <h1 class="people-index-title" id="page-title">
+          <span data-content-key="people.heading.main">Experienced political counsel,</span>
+          <em data-content-key="people.heading.emphasis">directly engaged.</em>
+        </h1>
+        <p class="page-lede" data-content-key="people.lede">
           Clients work with people who know their organizations, understand their priorities and are
           accessible when decisions need to be made.
         </p>
       </div>
-    </section>
-
-    <section class="people section-pad subpage-content" aria-label="Our people">
       <div class="people-grid">
-        <article class="person reveal" id="nicholas-sanders">
+        <a class="person-card reveal" href="nicholas-sanders/">
           <img src="../assets/nicholas-sanders.webp" alt="Nicholas Sanders" width="1400" height="1400" loading="lazy" />
-          <div class="person-heading">
-            <p>Founding Partner</p>
-            <h2>Nicholas Sanders</h2>
-          </div>
-          <p class="person-intro">
-            Nick advises candidates, public officials, political committees, ballot measure campaigns,
-            nonprofit organizations and political professionals on campaigns, elections, advocacy,
-            lobbying and governmental ethics.
-          </p>
-          <a class="person-email" href="mailto:nicholas@tpl.group">nicholas@tpl.group</a>
-          <details>
-            <summary>Full profile <span aria-hidden="true">+</span></summary>
-            <div class="profile-detail">
-              <p>
-                Nick serves as general counsel to campaigns and political organizations and advises
-                clients throughout the lifecycle of political activity, from formation, fundraising
-                and campaign communications to ballot access, regulatory compliance and enforcement.
-                He has drafted dozens of ballot measures and counseled candidates and public officials
-                throughout California.
-              </p>
-              <p>
-                He also maintains an active election law and litigation practice, including candidate
-                ballot access, ballot designations, candidate statements and challenges to ballot materials.
-              </p>
-              <p>
-                Nick brings more than 15 years of political law experience, including service at the
-                California Fair Political Practices Commission and the Federal Election Commission.
-              </p>
-              <dl>
-                <div><dt>Education</dt><dd>University of California, Davis School of Law, J.D., 2015<br />University of California, Davis, B.A., 2008</dd></div>
-                <div><dt>Admissions</dt><dd>California</dd></div>
-              </dl>
-            </div>
-          </details>
-        </article>
+          <span class="person-card-role" data-content-key="people.nicholas.role">Founding Partner</span>
+          <h2 data-content-key="people.nicholas.name">Nicholas Sanders</h2>
+          <span class="person-card-link">View profile <span aria-hidden="true">↗</span></span>
+        </a>
 
-        <article class="person reveal" id="tracey-wigglesworth">
+        <a class="person-card reveal" href="tracey-wigglesworth/">
           <img src="../assets/tracey-wigglesworth.webp" alt="Tracey Frazier Wigglesworth" width="1400" height="1400" loading="lazy" />
-          <div class="person-heading">
-            <p>Founding Partner</p>
-            <h2>Tracey Frazier Wigglesworth</h2>
-          </div>
-          <p class="person-intro">
-            Tracey helps clients navigate the rules governing political activity, issue advocacy,
-            campaign finance compliance, lobbying and governmental ethics in California and nationwide.
-          </p>
-          <a class="person-email" href="mailto:tracey@tpl.group">tracey@tpl.group</a>
-          <details>
-            <summary>Full profile <span aria-hidden="true">+</span></summary>
-            <div class="profile-detail">
-              <p>
-                Tracey counsels sophisticated nonprofit and corporate clients on structuring political
-                and issue advocacy programs, multijurisdictional engagement and the compliance implications
-                of operating across organizational, regulatory and geographic lines. She also represents
-                clients in sensitive audits, investigations and enforcement matters.
-              </p>
-              <p>
-                Her practice extends to emerging issues at the intersection of law, politics and technology,
-                including applying election, campaign finance and disclosure laws to new products, business
-                models and methods of political engagement.
-              </p>
-              <p>
-                Before co-founding TPLG, Tracey helped build and oversee one of the country’s largest
-                nonfederal campaign finance compliance programs; advised Fortune 100 corporations on
-                50-state engagement; and investigated, prosecuted, negotiated and resolved more than
-                1,700 matters involving alleged campaign finance, lobbying and government ethics violations.
-              </p>
-              <dl>
-                <div><dt>Education</dt><dd>University of the Pacific, McGeorge School of Law, J.D., 2015; Certificate in Public Law and Policy<br />Loyola Marymount University, B.B.A., 2008</dd></div>
-                <div><dt>Admissions</dt><dd>California</dd></div>
-              </dl>
-            </div>
-          </details>
-        </article>
+          <span class="person-card-role" data-content-key="people.tracey.role">Founding Partner</span>
+          <h2 data-content-key="people.tracey.name">Tracey Frazier Wigglesworth</h2>
+          <span class="person-card-link">View profile <span aria-hidden="true">↗</span></span>
+        </a>
 
-        <article class="person reveal" id="emma-olson-sharkey">
+        <a class="person-card reveal" href="emma-olson-sharkey/">
           <img src="../assets/emma-olson-sharkey.webp" alt="Emma Olson Sharkey" width="1400" height="1400" loading="lazy" />
-          <div class="person-heading">
-            <p>Partner</p>
-            <h2>Emma Olson Sharkey</h2>
-          </div>
-          <p class="person-intro">
-            Emma is a nationally recognized ballot measure and nonprofit tax lawyer who advises clients
-            on campaign finance, tax and election laws governing political and issue advocacy nationwide.
-          </p>
-          <a class="person-email" href="mailto:emma@tpl.group">emma@tpl.group</a>
-          <details>
-            <summary>Full profile <span aria-hidden="true">+</span></summary>
-            <div class="profile-detail">
-              <p>
-                Emma has served as outside counsel to ballot measure efforts in more than 15 states,
-                advising clients from campaign formation and qualification through post-election proceedings.
-                She counsels campaigns, defends clients before state regulatory agencies and advises on
-                ballot measure litigation strategy.
-              </p>
-              <p>
-                She also serves as outside counsel to nonprofit organizations and political committees,
-                helping clients structure and conduct political and issue advocacy consistent with federal
-                tax law and state and federal campaign finance requirements.
-              </p>
-              <p>
-                Her work and commentary have appeared in or been cited by The New York Times, The Washington
-                Post, NBC News, TIME, The Hill, Slate, CBS News Radio and Democracy Docket.
-              </p>
-              <dl>
-                <div><dt>Education</dt><dd>Northwestern Law School, J.D., 2015<br />University of Minnesota, B.A., 2008</dd></div>
-                <div><dt>Admissions</dt><dd>District of Columbia<br />Illinois</dd></div>
-              </dl>
-            </div>
-          </details>
-        </article>
+          <span class="person-card-role" data-content-key="people.emma.role">Partner</span>
+          <h2 data-content-key="people.emma.name">Emma Olson Sharkey</h2>
+          <span class="person-card-link">View profile <span aria-hidden="true">↗</span></span>
+        </a>
 
-        <article class="person reveal" id="kristen-lippstreu">
+        <a class="person-card reveal" href="kristen-lippstreu/">
           <img src="../assets/kristen-lippstreu.webp" alt="Kristen Lippstreu" width="1400" height="1400" loading="lazy" />
-          <div class="person-heading">
-            <p>Director, Political Compliance</p>
-            <h2>Kristen Lippstreu</h2>
-          </div>
-          <p class="person-intro">
-            Kristen works with clients to build and manage sophisticated campaign finance, lobbying and
-            political compliance programs across federal, state and local jurisdictions.
-          </p>
-          <a class="person-email" href="mailto:kristen@tpl.group">kristen@tpl.group</a>
-          <details>
-            <summary>Full profile <span aria-hidden="true">+</span></summary>
-            <div class="profile-detail">
-              <p>
-                Kristen brings more than a decade of experience navigating complex reporting regimes,
-                with particular depth in California political law and multijurisdictional compliance.
-                Her experience spans PAC administration, major ballot measure campaigns and institution-wide
-                political compliance.
-              </p>
-              <p>
-                She develops systems and processes that allow highly regulated organizations to engage in
-                political activity at scale, translating legal requirements into practical clearance
-                procedures, reporting systems and internal controls.
-              </p>
-              <p>
-                Kristen’s combination of technical expertise, operational experience and practical judgment
-                helps clients treat political compliance as an integrated part of a broader engagement program.
-              </p>
-              <dl>
-                <div><dt>Education</dt><dd>University of Oregon, B.A., 2012</dd></div>
-              </dl>
-            </div>
-          </details>
-        </article>
+          <span class="person-card-role" data-content-key="people.kristen.role">Director, Political Compliance</span>
+          <h2 data-content-key="people.kristen.name">Kristen Lippstreu</h2>
+          <span class="person-card-link">View profile <span aria-hidden="true">↗</span></span>
+        </a>
       </div>
     </section>
   </main>
@@ -287,7 +166,7 @@
   <footer class="site-footer">
     <img src="../assets/tplg-wordmark-navy.svg" alt="The Political Law Group" />
     <div>
-      <p>Political law counsel nationwide.</p>
+      <p data-content-key="global.footer.tagline">Political law counsel nationwide.</p>
       <p>© 2026 The Political Law Group. All rights reserved.</p>
     </div>
   </footer>

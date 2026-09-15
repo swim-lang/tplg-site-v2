@@ -1,15 +1,15 @@
 # TPLG brand, website, and email-signature brief
 
-Status: Release brief
+Status: Active implementation brief
 
-Last updated: September 14, 2026
+Last updated: September 15, 2026
 
-Publication status: Approved for public release. The homepage and unlisted signature utility are maintained together in the V2 production repository.
+Publication status: The September 14 site remains public. Tracey's September 15 revision and the content editor are on a protected Vercel preview and have not been published to production.
 
 ## Verified sources
 
 - [Missive: Branding, Website, Etc.](https://mail.missiveapp.com/#inbox/conversations/29e99532-a061-4ee0-9784-0076bc52d86d), September 3–14, 2026. Tracey Wigglesworth, Sean Ashlow, Nicholas Sanders, and Emma Olson Sharkey.
-- [Missive: Email sig is this?](https://mail.missiveapp.com/#inbox/conversations/0392f51e-062f-4b93-8904-8566381d22d6), September 10, 2026. Tracey Wigglesworth and Sean Ashlow; the forwarded source originated with Emma Olson Sharkey.
+- [Missive: Email sig is this?](https://mail.missiveapp.com/#inbox/conversations/0392f51e-062f-4b93-8904-8566381d22d6), September 10–15, 2026. Tracey Wigglesworth and Sean Ashlow; the forwarded source originated with Emma Olson Sharkey. Tracey's September 15 message is the source of truth for this revision.
 - Supplied brand assets: `MainLockup.svg`, the final TPLG asset package, and `Web.png`
   (received September 14, 2026).
 - Existing site repository: `swim-lang/tplg-site-v2`; current public deployment remains unchanged while the new direction is developed.
@@ -78,6 +78,42 @@ Sean supplied the website mockup on September 14. The implementation direction i
 - ivory, navy and copper only across the public site and signature utility;
 - no filler image and no cookie banner unless tracking is actually introduced.
 
+### September 15 revision
+
+Tracey's latest message narrows and restructures the public site:
+
+- Keep the slash favicon and the static `TPLG /` portion of the homepage animation.
+- Remove the explanatory sentence beneath each rotating homepage word for a more dramatic, less informational opening.
+- Replace the oversized People presentation with a compact landing grid of square team thumbnails and names.
+- Give each person an individual, directly shareable profile page containing the larger portrait and full biography.
+- Refine the People introduction rather than retaining the phrase `, directly involved.` verbatim. The current preview uses `Experienced political counsel, directly engaged.` as a restrained working edit.
+- Move the existing `Why TPLG?` composition to the top of the Practice page, ahead of the existing practice-area list.
+- Preserve the hidden Insights route in source while it remains out of public navigation.
+- Prepare a small authenticated editor for visible page copy so approved TPLG users can make text changes without a code release.
+
+The next staff additions described by Tracey are not yet part of the editor. New profiles still require a supplied photo and bio plus a code-managed route and card; the first editor release is intentionally limited to existing visible text.
+
+### Homepage lockup design note
+
+Tracey prefers that `TPLG /` remain fixed while the companion word changes. Sean's design concern remains valid: a fixed left edge removes motion from the mark, but changing word lengths make the full lockup optically unbalanced. The earlier dynamic-centering behavior was introduced deliberately to keep each complete `TPLG / word` composition centered. Removing the explanatory copy below does not change that geometry.
+
+The September 15 preview follows Tracey's static-mark preference. In the eventual client response, frame this as a genuine tradeoff: the mark can stay fixed, or the full composition can remain optically centered, but both cannot be perfectly true while the companion words have different widths. Do not present the static result as an unnoticed alignment error.
+
+## Content editor scope
+
+The first editor is an unlisted `/admin/` route backed by a dedicated Supabase project:
+
+- one shared administrator account with a password-only login screen; there is no public signup or invitation flow;
+- an explicit database allowlist in addition to authentication;
+- plain-text editing for current People, profile, Why TPLG, Practice, Offices, and footer copy;
+- hardcoded published copy remains the first-render and outage fallback;
+- successful saves update the live visible copy immediately;
+- editors cannot create or delete fields, routes, profiles, images, or pages;
+- SEO titles, descriptions, Open Graph content, navigation, and structural changes remain code-managed;
+- the browser uses only the public project key, with row-level security enforcing write access.
+
+The schema, single shared administrator, and editor preview are connected to the dedicated Supabase project. Public registration is disabled at the project level, and the account password is supplied separately and is never stored in the repository or Vercel. The revised site and editor still require preview approval before a production release.
+
 ## Email-signature requirements
 
 Tracey explicitly elevated the signature block and letterhead to priority deliverables. The examples in Missive establish the following fields:
@@ -135,3 +171,4 @@ An add-in is a reasonable phase 2 only if TPLG needs centralized enforcement or 
 1. Choose the preferred default signature layout after reviewing the prototype.
 2. Confirm whether physical address should be prohibited or merely optional in signatures.
 3. Approve the disclaimer verbatim.
+4. Confirm that immediate-save publishing is acceptable for this small first version; a separate draft-and-publish workflow is not included.

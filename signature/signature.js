@@ -5,8 +5,16 @@
     navy: "#0D1B2A",
     copper: "#B65A2A",
     ivory: "#F5F3EF",
-    logoPreview: "/assets/tplg-main-lockup-email.png",
-    logoProduction: "https://thepoliticallaw.group/assets/tplg-main-lockup-email.png",
+    logoPreview: {
+      balanced: "/assets/tplg-main-lockup-email-balanced.png",
+      stacked: "/assets/tplg-main-lockup-email-stacked.png",
+      compact: "/assets/tplg-main-lockup-email-compact.png"
+    },
+    logoProduction: {
+      balanced: "https://thepoliticallaw.group/assets/tplg-main-lockup-email-balanced.png",
+      stacked: "https://thepoliticallaw.group/assets/tplg-main-lockup-email-stacked.png",
+      compact: "https://thepoliticallaw.group/assets/tplg-main-lockup-email-compact.png"
+    },
     firm: "The Political Law Group LLP",
     disclaimer:
       "THIS EMAIL IS CONFIDENTIAL AND MAY BE LEGALLY PRIVILEGED. IF YOU HAVE RECEIVED IT IN ERROR, PLEASE NOTIFY US IMMEDIATELY AND THEN DELETE IT. ANY TAX ADVICE IS NOT INTENDED TO AND CANNOT BE USED FOR AVOIDING IRS PENALTIES OR FOR RECOMMENDING ANY TAX-RELATED TRANSACTION OR MATTER TO A THIRD PARTY."
@@ -99,12 +107,16 @@
       </table>`;
   }
 
+  function logoUrl(logoSet, layout) {
+    return logoSet[layout] || logoSet.balanced;
+  }
+
   function renderBalanced(state, logoUrl) {
     return `
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;">
         <tr>
           <td width="190" valign="top" style="width:190px;padding:2px 22px 2px 0;border-right:2px solid ${BRAND.copper};vertical-align:top;">
-            <img src="${escapeHtml(logoUrl)}" width="168" height="53" alt="TPLG" style="display:block;width:168px;height:53px;border:0;outline:none;text-decoration:none;" />
+            <img src="${escapeHtml(logoUrl)}" width="168" height="53" alt="TPLG" style="display:block;width:168px;max-width:168px;height:53px;max-height:53px;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;" />
           </td>
           <td valign="top" style="padding:0 0 0 22px;vertical-align:top;">
             <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="border-collapse:collapse;">
@@ -125,7 +137,7 @@
       <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="560" style="width:560px;max-width:100%;border-collapse:collapse;">
         <tr>
           <td style="padding:0 0 13px;border-bottom:2px solid ${BRAND.copper};">
-            <img src="${escapeHtml(logoUrl)}" width="210" height="66" alt="TPLG" style="display:block;width:210px;height:66px;border:0;outline:none;text-decoration:none;" />
+            <img src="${escapeHtml(logoUrl)}" width="210" height="66" alt="TPLG" style="display:block;width:210px;max-width:210px;height:66px;max-height:66px;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;" />
           </td>
         </tr>
         <tr>
@@ -155,7 +167,7 @@
             </table>
           </td>
           <td width="144" valign="top" align="right" style="width:144px;padding:1px 0 0 18px;vertical-align:top;text-align:right;">
-            <img src="${escapeHtml(logoUrl)}" width="126" height="39" alt="TPLG" style="display:block;width:126px;height:39px;margin-left:auto;border:0;outline:none;text-decoration:none;" />
+            <img src="${escapeHtml(logoUrl)}" width="126" height="39" alt="TPLG" style="display:block;width:126px;max-width:126px;height:39px;max-height:39px;margin-left:auto;border:0;outline:none;text-decoration:none;-ms-interpolation-mode:bicubic;" />
             <div style="margin-top:8px;color:${BRAND.navy};font-family:Arial,Helvetica,sans-serif;font-size:9px;line-height:13px;white-space:nowrap;">${BRAND.firm}</div>
           </td>
         </tr>
@@ -192,7 +204,7 @@
   function renderPreview() {
     const state = readState();
     addressField.hidden = !state.includeAddress;
-    preview.innerHTML = renderSignature(state, BRAND.logoPreview);
+    preview.innerHTML = renderSignature(state, logoUrl(BRAND.logoPreview, state.layout));
     syncPreviewScale();
     copyStatus.textContent = "";
   }
@@ -230,7 +242,7 @@
 
   async function copySignature() {
     const state = readState();
-    const html = renderSignature(state, BRAND.logoProduction);
+    const html = renderSignature(state, logoUrl(BRAND.logoProduction, state.layout));
     const text = plainText(state);
 
     try {
@@ -257,7 +269,7 @@
 
   function downloadSignature() {
     const state = readState();
-    const html = renderSignature(state, BRAND.logoProduction);
+    const html = renderSignature(state, logoUrl(BRAND.logoProduction, state.layout));
     const documentHtml = `<!DOCTYPE html><html><head><meta charset="UTF-8"><title>TPLG email signature</title></head><body style="margin:24px;color:${BRAND.navy};">${html}</body></html>`;
     const blob = new Blob([documentHtml], { type: "text/html;charset=utf-8" });
     const url = URL.createObjectURL(blob);

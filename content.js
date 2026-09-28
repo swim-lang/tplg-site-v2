@@ -11,11 +11,22 @@ function applyValue(key, value) {
       element.setAttribute("href", `mailto:${value}`);
     }
 
+    if (element.dataset.contentHref === "phone") {
+      element.setAttribute("href", `tel:${value.replace(/[^+\d]/g, "")}`);
+    }
+
   });
 }
 
 async function hydrateContent() {
   if (!supabaseUrl || !publishableKey) return;
+
+  const isLocalPreview = ["127.0.0.1", "localhost"].includes(window.location.hostname);
+  const useRemoteContent = new URLSearchParams(window.location.search).has("remote-content");
+  if (isLocalPreview && !useRemoteContent) {
+    document.documentElement.dataset.contentSource = "published-fallback";
+    return;
+  }
 
   try {
     const response = await fetch(

@@ -68,9 +68,11 @@
     </a>
 
     <nav class="desktop-nav" aria-label="Main navigation">
+      <a href="firm/">Firm</a>
       <a href="people/">People</a>
       <a href="practice/">Practice</a>
-      <a href="offices/">Offices</a>
+      <a href="insights/">Insights</a>
+      <a href="contact/">Contact</a>
     </nav>
 
     <button
@@ -87,33 +89,21 @@
 
   <div class="mobile-menu" id="mobile-menu" hidden>
     <div class="mobile-menu-head">
-      <img src="assets/tplg-wordmark-ivory.svg" alt="The Political Law Group" />
+      <a href="./" aria-label="The Political Law Group home">
+        <img src="assets/tplg-wordmark-ivory.svg" alt="The Political Law Group" />
+      </a>
       <button class="menu-close" id="menu-close" type="button" aria-label="Close menu">
         <span aria-hidden="true"></span>
       </button>
     </div>
     <nav aria-label="Mobile navigation">
+      <a class="mobile-primary" href="firm/">Firm</a>
       <a class="mobile-primary" href="people/">People</a>
-      <div class="mobile-group">
-        <a class="mobile-primary" href="practice/">Practice</a>
-        <div>
-          <a href="practice/#campaign-finance" data-content-key="practice.campaign-finance.name">Campaign Finance</a>
-          <a href="practice/#elections" data-content-key="practice.elections.name">Elections</a>
-          <a href="practice/#advocacy" data-content-key="practice.advocacy.name">Advocacy</a>
-          <a href="practice/#nonprofits" data-content-key="practice.nonprofits.name">Nonprofits</a>
-          <a href="practice/#ethics" data-content-key="practice.ethics.name">Ethics</a>
-          <a href="practice/#enforcement" data-content-key="practice.enforcement.name">Enforcement</a>
-        </div>
-      </div>
-      <div class="mobile-group">
-        <a class="mobile-primary" href="offices/">Offices</a>
-        <div>
-          <a href="offices/#sacramento" data-content-key="offices.sacramento.city">Sacramento</a>
-          <a href="offices/#washington" data-content-key="offices.washington.city" data-content-suffix=", D.C.">Washington, D.C.</a>
-        </div>
-      </div>
+      <a class="mobile-primary" href="practice/">Practice</a>
+      <a class="mobile-primary" href="insights/">Insights</a>
+      <a class="mobile-primary" href="contact/">Contact</a>
     </nav>
-    <a class="mobile-contact" href="mailto:info@tpl.group" data-content-key="offices.contact.email" data-content-href="email">info@tpl.group</a>
+    <a class="mobile-contact" href="mailto:info@tpl.group" data-content-key="contact.email" data-content-href="email">info@tpl.group</a>
   </div>
 
   <main id="main-content">

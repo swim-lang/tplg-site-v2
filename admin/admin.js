@@ -21,18 +21,6 @@ const saveButton = document.querySelector("#save-button");
 const saveStatus = document.querySelector("#save-status");
 const signOutButton = document.querySelector("#sign-out-button");
 
-const pageLinks = {
-  People: "../people/",
-  "Nicholas Sanders": "../people/nicholas-sanders/",
-  "Tracey Wigglesworth": "../people/tracey-wigglesworth/",
-  "Emma Olson Sharkey": "../people/emma-olson-sharkey/",
-  "Kristen Lippstreu": "../people/kristen-lippstreu/",
-  "Why TPLG": "../practice/",
-  "Practice Areas": "../practice/#practice-areas",
-  Offices: "../offices/",
-  Global: "../"
-};
-
 let activePage = CONTENT_FIELDS[0].page;
 let values = new Map();
 let initialValues = new Map();
@@ -70,7 +58,7 @@ function renderNavigation() {
 function renderFields() {
   const group = CONTENT_FIELDS.find((item) => item.page === activePage);
   sectionTitle.textContent = group.page;
-  viewPageLink.href = pageLinks[group.page] || "../";
+  viewPageLink.href = group.path || "../";
   contentForm.replaceChildren();
 
   group.fields.forEach((field) => {

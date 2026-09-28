@@ -1,6 +1,6 @@
 # TPLG content editor setup
 
-The public site remains a static Vite build. Its approved copy is present in the HTML, then `content.js` overlays any matching values from Supabase. If Supabase is unavailable or unconfigured, visitors continue to see the built-in copy.
+The public site remains a static Vite build. Approved copy lives in `cms/site-data.js`; `npm run generate` writes it into the public HTML before every build. Then `content.js` overlays any matching values from Supabase. If Supabase is unavailable or unconfigured, visitors continue to see the built-in copy.
 
 The site is connected to its dedicated `TPLG Website Content` Supabase project. The production deployment is configured with the browser-safe project URL and publishable key; no administrator password or elevated key is stored in source code or Vercel.
 
@@ -8,9 +8,10 @@ The site is connected to its dedicated `TPLG Website Content` Supabase project. 
 
 1. The dedicated project lives in the existing `swim-lang's Org` Supabase organization.
 2. `migrations/202609150001_create_content_editor.sql` has been applied.
-3. Project-wide signup is disabled. Email/password authentication stays enabled only so the existing shared administrator can sign in; the `/admin/` interface exposes no signup, invite, reset, or account-management flow.
-4. The production site and supported local preview URLs are allowlisted in `config.toml`.
-5. Database and security advisors were run after provisioning.
+3. `migrations/20260928182825_expand_public_site_content.sql` adds the full Firm, People, Practice, Insights and Contact field set. Apply it before deploying the matching site revision so existing database values do not override the new fallback copy.
+4. Project-wide signup is disabled. Email/password authentication stays enabled only so the existing shared administrator can sign in; the `/admin/` interface exposes no signup, invite, reset, or account-management flow.
+5. The production site and supported local preview URLs are allowlisted in `config.toml`.
+6. Database and security advisors were run after provisioning.
 
 The migration enables row-level security, makes published copy publicly readable, and permits updates only for authenticated users whose user ID is also present in `public.cms_editors`. Browser users cannot insert or delete content rows or alter field metadata.
 
@@ -50,6 +51,7 @@ Add the same two values to the Vercel project environments before deployment. Th
 - Blocking the Supabase request leaves the built-in HTML copy visible.
 - Login, save, refresh, and logout work on desktop and mobile.
 - The existing `/signature/` utility is unchanged and remains functional.
+- Local public-page previews use generated fallback copy by default. Add `?remote-content` when intentionally checking the current Supabase values.
 
 This first version edits visible copy only. Routes, staff additions, images, navigation, SEO metadata, structured data, and Open Graph assets remain code-managed.
 

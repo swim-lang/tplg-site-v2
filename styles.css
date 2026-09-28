@@ -797,7 +797,15 @@ summary:focus-visible {
   height: 100%;
 }
 
-.person-placeholder img {
+.person-placeholder-inner {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  flex-direction: column;
+  gap: clamp(14px, 1.6vw, 24px);
+}
+
+.person-placeholder-inner img {
   width: 54%;
   height: auto;
   border: 0;
@@ -805,8 +813,16 @@ summary:focus-visible {
   filter: none;
 }
 
-.person-card:hover .person-placeholder img,
-.person-card:focus-visible .person-placeholder img {
+.person-placeholder-label {
+  color: var(--ivory);
+  font-size: clamp(8px, 0.7vw, 11px);
+  letter-spacing: 0.18em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.person-card:hover .person-placeholder-inner img,
+.person-card:focus-visible .person-placeholder-inner img {
   filter: none;
   transform: none;
 }

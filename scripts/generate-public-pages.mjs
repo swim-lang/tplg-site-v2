@@ -136,8 +136,11 @@ function renderPortrait(person, className) {
     return `<img src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" loading="lazy" />`;
   }
 
-  return `<span class="${className} person-placeholder" role="img" aria-label="Portrait of ${escapeHtml(person.name)} forthcoming">
-            <img src="/assets/tplg-main-lockup-ivory.svg" alt="" aria-hidden="true" />
+  return `<span class="${className} person-placeholder" role="img" aria-label="Portrait of ${escapeHtml(person.name)} coming soon">
+            <span class="person-placeholder-inner">
+              <img src="/assets/tplg-main-lockup-ivory.svg" alt="" aria-hidden="true" />
+              <span class="person-placeholder-label" aria-hidden="true">Photo coming soon</span>
+            </span>
           </span>`;
 }
 
@@ -181,8 +184,11 @@ function renderPeoplePage() {
 function renderProfile(person) {
   const portrait = person.portrait
     ? `<img src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" />`
-    : `<span class="profile-photo-placeholder person-placeholder" role="img" aria-label="Portrait of ${escapeHtml(person.name)} forthcoming">
-          <img src="/assets/tplg-main-lockup-ivory.svg" alt="" aria-hidden="true" />
+    : `<span class="profile-photo-placeholder person-placeholder" role="img" aria-label="Portrait of ${escapeHtml(person.name)} coming soon">
+          <span class="person-placeholder-inner">
+            <img src="/assets/tplg-main-lockup-ivory.svg" alt="" aria-hidden="true" />
+            <span class="person-placeholder-label" aria-hidden="true">Photo coming soon</span>
+          </span>
         </span>`;
   const biography = person.biography.map((paragraph, index) =>
     `            <p data-content-key="people.${person.key}.bio.${index + 1}">${escapeHtml(paragraph)}</p>`

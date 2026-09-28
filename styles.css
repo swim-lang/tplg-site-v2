@@ -278,7 +278,7 @@ summary:focus-visible {
   align-items: center;
   justify-content: space-between;
   gap: 24px;
-  padding-bottom: 30px;
+  padding-bottom: clamp(20px, 3.6svh, 30px);
   border-bottom: 1px solid var(--line-light);
 }
 
@@ -318,7 +318,7 @@ summary:focus-visible {
 .mobile-menu nav {
   display: grid;
   gap: 0;
-  padding: 28px 0 50px;
+  padding: clamp(18px, 3.4svh, 28px) 0 clamp(26px, 5.8svh, 50px);
 }
 
 .mobile-menu nav > .mobile-primary {
@@ -327,11 +327,11 @@ summary:focus-visible {
 
 .mobile-primary {
   display: block;
-  padding: 14px 0;
+  padding: clamp(9px, 1.65svh, 14px) 0;
   font-family: var(--serif);
-  font-size: clamp(38px, 11vw, 58px);
-  letter-spacing: -0.025em;
-  line-height: 1;
+  font-size: clamp(38px, min(11vw, 8svh), 50px);
+  letter-spacing: -0.02em;
+  line-height: 1.02;
 }
 
 .mobile-group {
@@ -350,11 +350,11 @@ summary:focus-visible {
 
 .mobile-contact {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: clamp(16px, 2.8svh, 24px);
   border-top: 1px solid var(--line-light);
   color: var(--copper);
   font-family: var(--serif);
-  font-size: 28px;
+  font-size: clamp(24px, 4vw, 28px);
   font-style: italic;
 }
 

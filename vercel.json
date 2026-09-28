@@ -5,6 +5,11 @@
   "outputDirectory": "dist",
   "redirects": [
     {
+      "source": "/offices/",
+      "destination": "/contact/",
+      "permanent": false
+    },
+    {
       "source": "/offices/:path*",
       "destination": "/contact/",
       "permanent": false

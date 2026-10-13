@@ -68,7 +68,9 @@ export const PEOPLE = [
     name: "Buddy Norton",
     role: "Associate Attorney",
     email: "buddy@tpl.group",
-    portrait: null,
+    portrait: "buddy-norton.webp",
+    portraitWidth: 1400,
+    portraitHeight: 1400,
     intro: "Buddy Norton is an associate attorney at The Political Law Group, where he advises clients on campaign finance, lobbying, government ethics and election law matters at the federal, state and local levels.",
     biography: [
       "Buddy brings a broad perspective to his political law practice, informed by work in private practice, government, campaigns and political organizations. He has significant experience in election administration and voter protection, including service as Deputy Director of Voter Protection for a state political party. There, he helped design and implement statewide programs spanning voter education, poll observation, ballot monitoring, voter hotlines and election response teams. During law school, he worked with a national political party’s voter protection program, tracking regulatory, legislative and judicial developments affecting federal and state elections and assisting state parties with voter protection programs during the 2020 election cycle.",
@@ -87,7 +89,9 @@ export const PEOPLE = [
     name: "Graham Willard",
     role: "Associate Attorney",
     email: "graham@tpl.group",
-    portrait: null,
+    portrait: "graham-willard.webp",
+    portraitWidth: 1400,
+    portraitHeight: 1400,
     intro: "Graham Willard is an associate attorney at The Political Law Group, where his practice focuses on campaign finance, government ethics, election law and regulatory compliance and enforcement.",
     biography: [
       "Graham’s unique background spans law, politics and government investigations. Before law school, he spent three years with a national public opinion research and political consulting firm, conducting polling, research and focus groups for political campaigns and advocacy organizations, including work on consequential congressional races during the 2020 election cycle. He later served as an intelligence analyst in the FBI’s Public Corruption Unit.",
@@ -141,7 +145,9 @@ export const PEOPLE = [
     name: "Sara Michels",
     role: "Compliance Specialist",
     email: "sara@tpl.group",
-    portrait: null,
+    portrait: "sara-michels.webp",
+    portraitWidth: 1400,
+    portraitHeight: 1400,
     nonAttorney: true,
     intro: "Sara Michels is a Compliance Specialist at The Political Law Group, where she supports the firm’s political compliance practice and assists with campaign finance reporting, research and regulatory requirements.",
     biography: [

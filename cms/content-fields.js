@@ -5,6 +5,7 @@ import {
   INSIGHTS_INTRO,
   NON_ATTORNEY_NOTE,
   PEOPLE,
+  PEOPLE_INTRO,
   PRACTICES,
   WHY_TPLG
 } from "./site-data.js";
@@ -51,13 +52,9 @@ export const CONTENT_FIELDS = [
     page: "People",
     path: "/people/",
     fields: [
-      text("people.heading.main", "Heading", "Experienced political counsel,"),
-      text("people.heading.emphasis", "Heading emphasis", "directly engaged."),
-      textarea(
-        "people.lede",
-        "Introduction",
-        "Clients work with people who know their organizations, understand their priorities and are accessible when decisions need to be made."
-      ),
+      text("people.heading.main", "Heading", PEOPLE_INTRO.headingMain),
+      text("people.heading.emphasis", "Heading emphasis", PEOPLE_INTRO.headingEmphasis),
+      textarea("people.lede", "Introduction", PEOPLE_INTRO.lede),
       text("people.nonattorney.note", "Non-attorney note", NON_ATTORNEY_NOTE)
     ]
   },

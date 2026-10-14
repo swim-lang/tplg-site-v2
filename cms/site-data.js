@@ -1,3 +1,9 @@
+export const PEOPLE_INTRO = {
+  headingMain: "Our team,",
+  headingEmphasis: "your partners.",
+  lede: "We work as an extension of your team, bringing experience, judgment, practical counsel and day-to-day support to the decisions that move your work forward."
+};
+
 export const PEOPLE = [
   {
     key: "nicholas",
@@ -31,7 +37,7 @@ export const PEOPLE = [
     portraitHeight: 1400,
     intro: "Tracey Frazier Wigglesworth is a founding partner of The Political Law Group, where her practice includes advising nonprofit and corporate clients, candidates, committees and major donors on campaign finance compliance, political and issue advocacy, lobbying, government contracts and conflicts of interest.",
     biography: [
-      "Drawing on deep experience in both the public and private sectors, Tracey advises clients on risk management and strategic defense in sensitive audits, investigations and complex compliance matters. She has defended clients in administrative enforcement actions before federal, state and local regulators across the country.",
+      "With her deep experience in both the public and private sectors, Tracey understands how regulators think, where scrutiny is likely to arise and how decisions made in real time may be viewed later. She advises clients on risk management and strategic defense in sensitive audits, investigations and complex compliance matters and has defended clients in administrative enforcement actions before federal, state and local regulators across the country.",
       "Tracey also advises political technology startups, established companies and platforms on emerging issues at the intersection of law, politics and technology. She helps clients navigate election, ethics, contracting and disclosure laws as they develop new technology or business models, enter the political space and bring innovative products to market in California and nationwide.",
       "Before co-founding TPLG, Tracey split her time between Sacramento, Los Angeles and Washington, D.C., where she helped build and oversee one of the country’s largest nonfederal campaign finance compliance programs; advise Fortune 100 corporations on 50-state political giving; and investigate, prosecute, negotiate and resolve more than 1,700 matters involving alleged violations of campaign finance, lobbying and government ethics laws."
     ],
@@ -94,7 +100,7 @@ export const PEOPLE = [
     portraitHeight: 1400,
     intro: "Graham Willard is an associate attorney at The Political Law Group, where his practice focuses on campaign finance, government ethics, election law and regulatory compliance and enforcement.",
     biography: [
-      "Graham’s unique background spans law, politics and government investigations. Before law school, he spent three years with a national public opinion research and political consulting firm, conducting polling, research and focus groups for political campaigns and advocacy organizations, including work on consequential congressional races during the 2020 election cycle. He later served as an intelligence analyst in the FBI’s Public Corruption Unit.",
+      "Graham’s unique background spans law, politics and government investigations. Before law school, he spent three years with a national public opinion research and political consulting firm, conducting polling, research and focus groups for political campaigns and advocacy organizations, including work on consequential congressional races during the 2020 election cycle.",
       "During law school, Graham clerked for a local ethics commission where he helped investigate potential violations of campaign finance, conflicts of interest and ethics laws, evaluated complaints and assisted with enforcement matters. He also interned for a City Attorney’s office where he drafted legislation, analyzed legal risk and advised on compliance with federal, state and local law.",
       "Prior to joining TPLG, Graham served as a law clerk to a Los Angeles County Superior Court judge in the writs and receivers department, where he researched and analyzed complex civil matters, including election law writ petitions, and prepared recommendations on matters before the court."
     ],
@@ -173,7 +179,7 @@ export const PEOPLE = [
     nonAttorney: true,
     intro: "Katie Clyde is the Director of Operations at The Political Law Group, where she oversees the firm’s administrative, financial and business operations. She brings more than 20 years of experience in procurement, finance and project management and works closely with the firm’s partners and professional staff to develop and maintain the systems and processes that support TPLG’s legal and compliance practices.",
     biography: [
-      "Before joining TPLG, Katie worked in both the private and public sectors, including with a Sacramento-based lobbying firm and the State of California. Her background includes government contracting, conflicts-of-interest matters and Statements of Economic Interests (Form 700), giving her a practical understanding of the regulatory environment in which many of TPLG’s clients operate."
+      "Prior to joining TPLG, Katie worked in both the private and public sectors, including with a Sacramento-based lobbying firm and the State of California. Her background includes government contracting, reviewing conflicts of interest issues and filing personal financial disclosures (or Form 700s), giving her a practical understanding of the regulatory environment in which many of TPLG’s clients operate."
     ],
     education: ["California State University, Chico"],
     admissions: []
@@ -184,11 +190,9 @@ export const WHY_TPLG = {
   headingMain: "Political law is not one of our practice areas.",
   headingEmphasis: "It is our practice.",
   body: [
-    "The Political Law Group is a national political law firm built to counsel clients operating at the intersection of law, politics and public policy. Our lawyers bring decades of experience advising candidates, public officials, ballot measure campaigns, political committees, nonprofit and advocacy organizations, corporations and major donors through the legal and regulatory complexities that accompany political engagement.",
-    "With that experience comes an appreciation that political matters rarely present purely legal questions – they implicate larger, strategic decisions that impact communications, fundraising, coalition-building and organizational priorities. Effective counsel requires an understanding of the law and the broader context, identifying and contextualizing risk and providing clear, practical advice that allows clients to make informed decisions.",
-    "It also requires applying established law to a political world that is constantly evolving. Many of the regulatory frameworks governing political activity were developed decades ago, long before today’s methods of campaigning, advocacy, fundraising, communications and technology. We bring deep institutional knowledge to modern problems, with a practical approach focused on finding creative, compliant paths forward.",
-    "Our experience on both sides of the regulatory process adds another dimension to that judgment. We understand how regulators think, where scrutiny is likely to arise and how decisions made in real time may be viewed later. That perspective helps us distinguish meaningful from theoretical risk in real time and strategically respond to government inquiries, investigations and complaints.",
-    "TPLG was built around this approach to political law: deep experience and sound judgment, delivered through a client service model designed for the way our clients operate today. Clients work directly with experienced political lawyers who know their organizations, understand their priorities and are accessible when decisions need to be made. The result is counsel that is rigorous without being rigid, practical without being simplistic and responsive to both where the law has been and where the political process is going."
+    "The Political Law Group is a national political law firm built for clients operating at the intersection of law, politics and public policy. We bring decades of experience to the legal and regulatory complexities of political engagement.",
+    "Political law requires more than knowing the rules. It requires understanding the broader strategic context and applying established law to an environment that is constantly evolving. We bring deep institutional knowledge to modern problems and clear, practical judgment to decisions that often need to be made in real time.",
+    "TPLG was built for what comes next. Our counsel is rigorous without being rigid, practical without being simplistic and grounded in both where the law has been and where the political process is going."
   ]
 };
 
@@ -263,8 +267,8 @@ export const PRACTICES = [
 
 export const CONTACT = {
   headingMain: "Start a conversation.",
-  headingEmphasis: "Political law counsel nationwide.",
-  lede: "Sacramento, California.",
+  headingEmphasis: "",
+  lede: "",
   addressStreet: "1215 K, Suite 2000",
   addressLocality: "Sacramento, California 95814",
   email: "info@tpl.group",
@@ -279,12 +283,28 @@ export const INSIGHTS_INTRO = {
 
 export const INSIGHTS = [
   {
+    key: "la-voting-rights-election-disruption",
+    title: "L.A. voting rights groups mobilize to counter possible November election disruption",
+    publication: "Los Angeles Times",
+    date: "September 27, 2026",
+    credit: "Featuring Emma Olson Sharkey",
+    url: "https://www.latimes.com/california/story/2026-09-27/la-voting-rights-groups-mobilize-to-counter-possible-november-election-disruption"
+  },
+  {
     key: "red-state-direct-democracy",
     title: "Red State Legislators Work to Throttle Direct Democracy",
     publication: "WhoWhatWhy",
     date: "September 18, 2026",
     credit: "Featuring Emma Olson Sharkey",
     url: "https://whowhatwhy.org/politics/elections/red-state-legislators-work-to-throttle-direct-democracy/"
+  },
+  {
+    key: "becerra-steyer-legal-threats",
+    title: "Becerra, Steyer trade legal threats over attack ad days before primary",
+    publication: "The Sacramento Bee",
+    date: "May 31, 2026",
+    credit: "Featuring Nicholas Sanders, counsel to Xavier Becerra’s campaign",
+    url: "https://www.sacbee.com/news/politics-government/capitol-alert/article315956919.html"
   },
   {
     key: "florida-ballot-measures",
@@ -411,5 +431,5 @@ export const INSIGHTS = [
 export const NON_ATTORNEY_NOTE = "*Denotes a non-attorney professional.";
 
 export const GLOBAL = {
-  footerTagline: "Political law counsel nationwide."
+  footerTagline: "Grounded in experience. Built for what comes next."
 };

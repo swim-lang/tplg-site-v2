@@ -492,6 +492,11 @@ summary:focus-visible {
   font-weight: 400;
 }
 
+.page-title em:empty,
+.page-lede:empty {
+  display: none;
+}
+
 .page-lede {
   max-width: 680px;
   margin: clamp(28px, 3vw, 44px) 0 0;
@@ -574,6 +579,17 @@ summary:focus-visible {
   min-height: auto;
   padding-top: clamp(150px, 12vw, 190px);
   padding-bottom: clamp(64px, 5vw, 84px);
+}
+
+.page-hero.top-level-intro {
+  min-height: auto;
+  align-items: flex-start;
+  padding: clamp(166px, 14vw, 220px) var(--page-gutter) clamp(72px, 7vw, 104px);
+}
+
+.firm-page.top-level-intro,
+.people-index.top-level-intro {
+  padding-top: clamp(166px, 14vw, 220px);
 }
 
 .practice-index,
@@ -764,6 +780,14 @@ summary:focus-visible {
 .people-index-title em {
   color: var(--copper);
   font-weight: 400;
+}
+
+.display-heading.page-tagline,
+.page-title.page-tagline,
+.people-index-title.page-tagline {
+  font-size: clamp(60px, 6.7vw, 96px);
+  letter-spacing: -0.04em;
+  line-height: 0.94;
 }
 
 .people-index .page-lede {
@@ -1327,7 +1351,7 @@ summary:focus-visible {
 }
 
 .site-footer > img {
-  width: min(54vw, 340px);
+  width: min(48vw, 290px);
 }
 
 .site-footer > div {
@@ -1625,6 +1649,23 @@ summary:focus-visible {
     line-height: 0.96;
   }
 
+  .page-hero.top-level-intro {
+    min-height: auto;
+    padding: 138px 22px 72px;
+  }
+
+  .firm-page.top-level-intro,
+  .people-index.top-level-intro {
+    padding-top: 138px;
+  }
+
+  .display-heading.page-tagline,
+  .page-title.page-tagline,
+  .people-index-title.page-tagline {
+    font-size: clamp(50px, 14.5vw, 64px);
+    line-height: 0.96;
+  }
+
   .profile-credentials > div {
     grid-template-columns: 1fr;
     gap: 8px;
@@ -1662,7 +1703,7 @@ summary:focus-visible {
   }
 
   .site-footer > img {
-    width: min(72vw, 310px);
+    width: min(64vw, 260px);
   }
 
   .people-grid {

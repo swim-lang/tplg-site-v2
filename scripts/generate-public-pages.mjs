@@ -7,6 +7,7 @@ import {
   INSIGHTS_INTRO,
   NON_ATTORNEY_NOTE,
   PEOPLE,
+  PEOPLE_INTRO,
   PRACTICES,
   WHY_TPLG
 } from "../cms/site-data.js";
@@ -157,13 +158,13 @@ function renderPeoplePage() {
 
   const main = `
   <main id="main-content">
-    <section class="people people-index section-pad" aria-labelledby="page-title">
+    <section class="people people-index top-level-intro section-pad" aria-labelledby="page-title">
       <div class="people-index-intro">
-        <h1 class="people-index-title" id="page-title">
-          <span data-content-key="people.heading.main">Experienced political counsel,</span>
-          <em data-content-key="people.heading.emphasis">directly engaged.</em>
+        <h1 class="people-index-title page-tagline" id="page-title">
+          <span data-content-key="people.heading.main">${escapeHtml(PEOPLE_INTRO.headingMain)}</span>
+          <em data-content-key="people.heading.emphasis">${escapeHtml(PEOPLE_INTRO.headingEmphasis)}</em>
         </h1>
-        <p class="page-lede" data-content-key="people.lede">Clients work with people who know their organizations, understand their priorities and are accessible when decisions need to be made.</p>
+        <p class="page-lede" data-content-key="people.lede">${escapeHtml(PEOPLE_INTRO.lede)}</p>
       </div>
       <div class="people-grid">${cards}
       </div>
@@ -241,9 +242,9 @@ function renderFirmPage() {
   ).join("\n");
   const main = `
   <main id="main-content">
-    <section class="firm firm-page section-pad" aria-labelledby="page-title">
+    <section class="firm firm-page top-level-intro section-pad" aria-labelledby="page-title">
       <div class="firm-content">
-        <h1 class="display-heading reveal" id="page-title">
+        <h1 class="display-heading page-tagline reveal" id="page-title">
           <span data-content-key="why.heading.main">${escapeHtml(WHY_TPLG.headingMain)}</span>
           <em data-content-key="why.heading.emphasis">${escapeHtml(WHY_TPLG.headingEmphasis)}</em>
         </h1>
@@ -274,9 +275,9 @@ function renderPracticePage() {
         </a>`).join("\n");
   const main = `
   <main id="main-content">
-    <section class="page-hero practice-index-hero" aria-labelledby="page-title">
+    <section class="page-hero practice-index-hero top-level-intro" aria-labelledby="page-title">
       <div class="page-hero-inner">
-        <h1 class="page-title" id="page-title">Political law. <em>Practical counsel.</em></h1>
+        <h1 class="page-title page-tagline" id="page-title">Political law. <em>Practical counsel.</em></h1>
         <p class="page-lede">Focused counsel across campaign finance, elections, advocacy, nonprofits, ethics and enforcement.</p>
       </div>
     </section>
@@ -333,9 +334,9 @@ ${paragraphs}
 function renderContactPage() {
   const main = `
   <main id="main-content">
-    <section class="page-hero contact-hero" aria-labelledby="page-title">
+    <section class="page-hero contact-hero top-level-intro" aria-labelledby="page-title">
       <div class="page-hero-inner">
-        <h1 class="page-title" id="page-title">
+        <h1 class="page-title page-tagline" id="page-title">
           <span data-content-key="contact.heading.main">${escapeHtml(CONTACT.headingMain)}</span>
           <em data-content-key="contact.heading.emphasis">${escapeHtml(CONTACT.headingEmphasis)}</em>
         </h1>
@@ -391,9 +392,9 @@ function renderInsightsPage() {
         </a>`).join("\n");
   const main = `
   <main id="main-content">
-    <section class="page-hero" aria-labelledby="page-title">
+    <section class="page-hero top-level-intro" aria-labelledby="page-title">
       <div class="page-hero-inner">
-        <h1 class="page-title" id="page-title">
+        <h1 class="page-title page-tagline" id="page-title">
           <span data-content-key="insights.heading.main">${escapeHtml(INSIGHTS_INTRO.headingMain)}</span>
           <em data-content-key="insights.heading.emphasis">${escapeHtml(INSIGHTS_INTRO.headingEmphasis)}</em>
         </h1>

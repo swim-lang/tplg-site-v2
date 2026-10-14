@@ -131,6 +131,7 @@ export const PEOPLE = [
     portrait: "lauren-deutsch.webp",
     portraitWidth: 616,
     portraitHeight: 752,
+    portraitTopBias: true,
     nonAttorney: true,
     intro: "Lauren Deutsch is a Compliance Specialist at The Political Law Group, where she supports clients with day-to-day federal and state campaign finance compliance, including preparing reports, maintaining client records and assisting with ongoing reporting obligations.",
     biography: [
@@ -168,6 +169,7 @@ export const PEOPLE = [
     portrait: "katie-clyde.webp",
     portraitWidth: 617,
     portraitHeight: 752,
+    portraitTopBias: true,
     nonAttorney: true,
     intro: "Katie Clyde is the Director of Operations at The Political Law Group, where she oversees the firm’s administrative, financial and business operations. She brings more than 20 years of experience in procurement, finance and project management and works closely with the firm’s partners and professional staff to develop and maintain the systems and processes that support TPLG’s legal and compliance practices.",
     biography: [
@@ -194,7 +196,6 @@ export const PRACTICES = [
   {
     key: "campaign-finance",
     slug: "campaign-finance",
-    number: "I.",
     name: "Campaign Finance",
     description: "Formation, fundraising, communications, coordination, disclosure and ongoing compliance.",
     body: [
@@ -206,7 +207,6 @@ export const PRACTICES = [
   {
     key: "elections",
     slug: "elections",
-    number: "II.",
     name: "Elections",
     description: "Ballot access, ballot measures, candidate materials, disputes and political litigation.",
     body: [
@@ -218,7 +218,6 @@ export const PRACTICES = [
   {
     key: "advocacy",
     slug: "advocacy",
-    number: "III.",
     name: "Advocacy",
     description: "Political and issue advocacy programs structured to operate confidently across jurisdictions.",
     body: [
@@ -230,7 +229,6 @@ export const PRACTICES = [
   {
     key: "nonprofits",
     slug: "nonprofits",
-    number: "IV.",
     name: "Nonprofits",
     description: "Tax, campaign finance and election-law guidance for nonprofit political and issue advocacy.",
     body: [
@@ -242,7 +240,6 @@ export const PRACTICES = [
   {
     key: "ethics",
     slug: "ethics",
-    number: "V.",
     name: "Ethics",
     description: "Lobbying, government ethics and disclosure guidance for public and private actors.",
     body: [
@@ -254,7 +251,6 @@ export const PRACTICES = [
   {
     key: "enforcement",
     slug: "enforcement",
-    number: "VI.",
     name: "Enforcement",
     description: "Strategic representation in audits, investigations and agency enforcement matters.",
     body: [

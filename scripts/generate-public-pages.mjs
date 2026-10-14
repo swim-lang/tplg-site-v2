@@ -67,7 +67,7 @@ ${links.map(([key, href, label]) => `      <a class="mobile-primary" href="${hre
 function renderFooter() {
   return `
   <footer class="site-footer">
-    <img src="/assets/tplg-wordmark-navy.svg" alt="The Political Law Group" />
+    <img src="/assets/tplg-main-lockup-navy.svg" alt="The Political Law Group" />
     <div>
       <p data-content-key="global.footer.tagline">${escapeHtml(GLOBAL.footerTagline)}</p>
       <p>© 2026 The Political Law Group. All rights reserved.</p>
@@ -133,7 +133,8 @@ function renderName(person, tagName = "span") {
 
 function renderPortrait(person, className) {
   if (person.portrait) {
-    return `<img src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" loading="lazy" />`;
+    const portraitClass = person.portraitTopBias ? ' class="portrait-top-biased"' : "";
+    return `<img${portraitClass} src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" loading="lazy" />`;
   }
 
   return `<span class="${className} person-placeholder" role="img" aria-label="Portrait of ${escapeHtml(person.name)} coming soon">
@@ -158,7 +159,6 @@ function renderPeoplePage() {
   <main id="main-content">
     <section class="people people-index section-pad" aria-labelledby="page-title">
       <div class="people-index-intro">
-        <p class="page-kicker">People</p>
         <h1 class="people-index-title" id="page-title">
           <span data-content-key="people.heading.main">Experienced political counsel,</span>
           <em data-content-key="people.heading.emphasis">directly engaged.</em>
@@ -183,7 +183,7 @@ function renderPeoplePage() {
 
 function renderProfile(person) {
   const portrait = person.portrait
-    ? `<img src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" />`
+    ? `<img${person.portraitTopBias ? ' class="portrait-top-biased"' : ""} src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" />`
     : `<span class="profile-photo-placeholder person-placeholder" role="img" aria-label="Portrait of ${escapeHtml(person.name)} coming soon">
           <span class="person-placeholder-inner">
             <img src="/assets/tplg-main-lockup-ivory.svg" alt="" aria-hidden="true" />
@@ -210,7 +210,7 @@ function renderProfile(person) {
           ${portrait}
         </figure>
         <div class="profile-copy reveal">
-          <p class="page-kicker"><span data-content-key="people.${person.key}.role">${escapeHtml(person.role)}</span></p>
+          <p class="profile-role"><span data-content-key="people.${person.key}.role">${escapeHtml(person.role)}</span></p>
           <h1>${renderName(person)}</h1>
           <p class="profile-intro" data-content-key="people.${person.key}.intro">${escapeHtml(person.intro)}</p>
           <a class="profile-email" href="mailto:${escapeHtml(person.email)}" data-content-key="people.${person.key}.email" data-content-href="email">${escapeHtml(person.email)}</a>
@@ -242,7 +242,6 @@ function renderFirmPage() {
   const main = `
   <main id="main-content">
     <section class="firm firm-page section-pad" aria-labelledby="page-title">
-      <div class="section-label reveal"><span>01</span><p>Why TPLG?</p></div>
       <div class="firm-content">
         <h1 class="display-heading reveal" id="page-title">
           <span data-content-key="why.heading.main">${escapeHtml(WHY_TPLG.headingMain)}</span>
@@ -268,22 +267,21 @@ ${paragraphs}
 function renderPracticePage() {
   const rows = PRACTICES.map((practice) => `
         <a class="practice-row reveal" id="${practice.slug}" href="/practice/${practice.slug}/">
-          <span class="practice-number">${practice.number}</span>
+          <span class="practice-slash" aria-hidden="true">/</span>
           <h2 data-content-key="practice.${practice.key}.name">${escapeHtml(practice.name)}</h2>
           <p data-content-key="practice.${practice.key}.description">${escapeHtml(practice.description)}</p>
-          <span class="practice-arrow" aria-hidden="true">↗</span>
+          <span class="practice-cta" aria-hidden="true">Explore</span>
         </a>`).join("\n");
   const main = `
   <main id="main-content">
-    <section class="page-hero" aria-labelledby="page-title">
+    <section class="page-hero practice-index-hero" aria-labelledby="page-title">
       <div class="page-hero-inner">
-        <p class="page-kicker">Practice</p>
         <h1 class="page-title" id="page-title">Political law. <em>Practical counsel.</em></h1>
         <p class="page-lede">Focused counsel across campaign finance, elections, advocacy, nonprofits, ethics and enforcement.</p>
       </div>
     </section>
     <section class="practice practice-index section-pad subpage-content" aria-labelledby="practice-areas-title">
-      <div class="section-label section-label-light reveal"><span>01</span><h2 id="practice-areas-title">Practice areas</h2></div>
+      <h2 class="visually-hidden" id="practice-areas-title">Practice areas</h2>
       <div class="practice-list">${rows}
       </div>
     </section>
@@ -307,13 +305,12 @@ function renderPracticeDetail(practice) {
   <main id="main-content">
     <section class="page-hero practice-detail-hero" aria-labelledby="page-title">
       <div class="page-hero-inner">
-        <p class="page-kicker">Practice</p>
         <h1 class="page-title" id="page-title" data-content-key="practice.${practice.key}.name">${escapeHtml(practice.name)}</h1>
         <p class="page-lede" data-content-key="practice.${practice.key}.description">${escapeHtml(practice.description)}</p>
       </div>
     </section>
     <section class="practice-detail section-pad" aria-labelledby="practice-detail-title">
-      <div class="section-label reveal"><span>${practice.number}</span><h2 id="practice-detail-title">Our approach</h2></div>
+      <h2 class="visually-hidden" id="practice-detail-title">Our approach</h2>
       <div class="practice-detail-layout">
         <a class="profile-back reveal" href="/practice/"><span aria-hidden="true">←</span> All practice areas</a>
         <div class="practice-detail-copy reveal">
@@ -338,7 +335,6 @@ function renderContactPage() {
   <main id="main-content">
     <section class="page-hero contact-hero" aria-labelledby="page-title">
       <div class="page-hero-inner">
-        <p class="page-kicker">Contact</p>
         <h1 class="page-title" id="page-title">
           <span data-content-key="contact.heading.main">${escapeHtml(CONTACT.headingMain)}</span>
           <em data-content-key="contact.heading.emphasis">${escapeHtml(CONTACT.headingEmphasis)}</em>
@@ -347,7 +343,7 @@ function renderContactPage() {
       </div>
     </section>
     <section class="contact-page section-pad subpage-content" aria-labelledby="contact-details-title">
-      <div class="section-label reveal"><span>01</span><h2 id="contact-details-title">Contact details</h2></div>
+      <h2 class="visually-hidden" id="contact-details-title">Contact details</h2>
       <div class="contact-details">
         <div class="contact-detail reveal">
           <p>Address</p>
@@ -397,7 +393,6 @@ function renderInsightsPage() {
   <main id="main-content">
     <section class="page-hero" aria-labelledby="page-title">
       <div class="page-hero-inner">
-        <p class="page-kicker">Insights</p>
         <h1 class="page-title" id="page-title">
           <span data-content-key="insights.heading.main">${escapeHtml(INSIGHTS_INTRO.headingMain)}</span>
           <em data-content-key="insights.heading.emphasis">${escapeHtml(INSIGHTS_INTRO.headingEmphasis)}</em>
@@ -406,7 +401,7 @@ function renderInsightsPage() {
       </div>
     </section>
     <section class="insights insights-index section-pad subpage-content" aria-labelledby="insights-list-title">
-      <div class="section-label reveal"><span>01</span><h2 id="insights-list-title">Selected work and coverage</h2></div>
+      <h2 class="visually-hidden" id="insights-list-title">Selected work and coverage</h2>
       <div class="insights-list">${articles}
       </div>
     </section>

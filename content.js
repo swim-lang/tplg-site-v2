@@ -5,7 +5,11 @@ function applyValue(key, value) {
   document.querySelectorAll(`[data-content-key="${CSS.escape(key)}"]`).forEach((element) => {
     const prefix = element.dataset.contentPrefix || "";
     const suffix = element.dataset.contentSuffix || "";
-    element.textContent = `${prefix}${value}${suffix}`;
+    const nextText = `${prefix}${value}${suffix}`;
+
+    if (element.textContent !== nextText) {
+      element.textContent = nextText;
+    }
 
     if (element.dataset.contentHref === "email") {
       element.setAttribute("href", `mailto:${value}`);

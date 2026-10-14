@@ -497,6 +497,14 @@ summary:focus-visible {
   display: none;
 }
 
+.js.fonts-loading #page-title {
+  visibility: hidden;
+}
+
+.fonts-fallback #page-title {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
 .page-lede {
   max-width: 680px;
   margin: clamp(28px, 3vw, 44px) 0 0;

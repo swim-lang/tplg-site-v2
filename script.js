@@ -10,6 +10,44 @@
   const mobileMenu = document.querySelector("#mobile-menu");
   const main = document.querySelector("main");
   const footer = document.querySelector(".site-footer");
+  const root = document.documentElement;
+  const pageTitle = document.querySelector("#page-title");
+
+  async function settlePageTitleFont() {
+    const settleFonts = (caslonReady) => {
+      root.classList.remove("fonts-loading");
+      root.classList.add(caslonReady ? "fonts-ready" : "fonts-fallback");
+    };
+
+    if (!root.classList.contains("fonts-loading")) return;
+
+    if (!pageTitle) {
+      settleFonts(true);
+      return;
+    }
+
+    if (!document.fonts?.load) {
+      settleFonts(false);
+      return;
+    }
+
+    const fontSample = pageTitle.textContent.trim() || "Political law practical counsel";
+    const loadCaslon = Promise.all([
+      document.fonts.load('400 1em "adobe-caslon-pro"', fontSample),
+      document.fonts.load('italic 400 1em "adobe-caslon-pro"', fontSample)
+    ]).then((results) => results.every((faces) => faces.length > 0));
+    const timeout = new Promise((resolve) => {
+      window.setTimeout(() => resolve(false), 2500);
+    });
+
+    try {
+      settleFonts(await Promise.race([loadCaslon, timeout]));
+    } catch {
+      settleFonts(false);
+    }
+  }
+
+  settlePageTitleFont();
 
   const sequence = [
     "Campaigns",

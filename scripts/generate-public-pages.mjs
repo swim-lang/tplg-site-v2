@@ -148,14 +148,23 @@ function renderPortrait(person, className) {
 }
 
 function renderPeoplePage() {
-  const cards = PEOPLE.map((person) => `
-        <a class="person-card reveal" href="/people/${person.slug}/" aria-label="View ${escapeHtml(person.name)}’s profile">
+  const cards = PEOPLE.map((person) => {
+    const profilePublished = person.profilePublished !== false;
+    const tagName = profilePublished ? "a" : "article";
+    const cardClass = profilePublished ? "person-card reveal" : "person-card person-card-static reveal";
+    const attributes = profilePublished
+      ? ` href="/people/${person.slug}/" aria-label="View ${escapeHtml(person.name)}’s profile"`
+      : "";
+
+    return `
+        <${tagName} class="${cardClass}"${attributes}>
           <span class="person-card-portrait">
             ${renderPortrait(person, "person-card-placeholder")}
           </span>
           <span class="person-card-role" data-content-key="people.${person.key}.role">${escapeHtml(person.role)}</span>
           <h2>${renderName(person)}</h2>
-        </a>`).join("\n");
+        </${tagName}>`;
+  }).join("\n");
 
   const main = `
   <main id="main-content">
@@ -427,7 +436,8 @@ async function writePage(relativePath, content) {
 
 await Promise.all([
   writePage("people/index.html", renderPeoplePage()),
-  ...PEOPLE.map((person) => writePage(`people/${person.slug}/index.html`, renderProfile(person))),
+  ...PEOPLE.filter((person) => person.profilePublished !== false)
+    .map((person) => writePage(`people/${person.slug}/index.html`, renderProfile(person))),
   writePage("firm/index.html", renderFirmPage()),
   writePage("practice/index.html", renderPracticePage()),
   ...PRACTICES.map((practice) => writePage(`practice/${practice.slug}/index.html`, renderPracticeDetail(practice))),
@@ -435,4 +445,5 @@ await Promise.all([
   writePage("insights/index.html", renderInsightsPage())
 ]);
 
-console.log(`Generated ${PEOPLE.length + PRACTICES.length + 5} public pages.`);
+const profileCount = PEOPLE.filter((person) => person.profilePublished !== false).length;
+console.log(`Generated ${profileCount + PRACTICES.length + 5} public pages.`);

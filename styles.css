@@ -840,8 +840,8 @@ summary:focus-visible {
   object-position: center 20%;
 }
 
-.person-card:hover .person-card-portrait > img,
-.person-card:focus-visible .person-card-portrait > img {
+a.person-card:hover .person-card-portrait > img,
+a.person-card:focus-visible .person-card-portrait > img {
   filter: saturate(1);
   transform: scale(0.985);
 }
@@ -882,8 +882,8 @@ summary:focus-visible {
   text-transform: uppercase;
 }
 
-.person-card:hover .person-placeholder-inner img,
-.person-card:focus-visible .person-placeholder-inner img {
+a.person-card:hover .person-placeholder-inner img,
+a.person-card:focus-visible .person-placeholder-inner img {
   filter: none;
   transform: none;
 }

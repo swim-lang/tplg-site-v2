@@ -5,6 +5,16 @@
   "outputDirectory": "dist",
   "redirects": [
     {
+      "source": "/people/graham-willard/",
+      "destination": "/people/",
+      "permanent": false
+    },
+    {
+      "source": "/people/graham-willard",
+      "destination": "/people/",
+      "permanent": false
+    },
+    {
       "source": "/offices/",
       "destination": "/contact/",
       "permanent": false

@@ -94,21 +94,10 @@ export const PEOPLE = [
     slug: "graham-willard",
     name: "Graham Willard",
     role: "Associate Attorney",
-    email: "graham@tpl.group",
+    profilePublished: false,
     portrait: "graham-willard.webp",
     portraitWidth: 1400,
-    portraitHeight: 1400,
-    intro: "Graham Willard is an associate attorney at The Political Law Group, where his practice focuses on campaign finance, government ethics, election law and regulatory compliance and enforcement.",
-    biography: [
-      "Graham’s unique background spans law, politics and government investigations. Before law school, he spent three years with a national public opinion research and political consulting firm, conducting polling, research and focus groups for political campaigns and advocacy organizations, including work on consequential congressional races during the 2020 election cycle.",
-      "During law school, Graham clerked for a local ethics commission where he helped investigate potential violations of campaign finance, conflicts of interest and ethics laws, evaluated complaints and assisted with enforcement matters. He also interned for a City Attorney’s office where he drafted legislation, analyzed legal risk and advised on compliance with federal, state and local law.",
-      "Prior to joining TPLG, Graham served as a law clerk to a Los Angeles County Superior Court judge in the writs and receivers department, where he researched and analyzed complex civil matters, including election law writ petitions, and prepared recommendations on matters before the court."
-    ],
-    education: [
-      "University of California College of the Law, San Francisco, J.D., 2025",
-      "Georgetown University, B.S., 2018"
-    ],
-    admissions: ["California"]
+    portraitHeight: 1400
   },
   {
     key: "kristen",

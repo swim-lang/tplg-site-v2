@@ -4,7 +4,8 @@ import { PEOPLE, PRACTICES } from "./cms/site-data.js";
 
 const page = (path) => resolve(import.meta.dirname, path);
 const profilePages = Object.fromEntries(
-  PEOPLE.map((person) => [`person-${person.slug}`, page(`people/${person.slug}/index.html`)])
+  PEOPLE.filter((person) => person.profilePublished !== false)
+    .map((person) => [`person-${person.slug}`, page(`people/${person.slug}/index.html`)])
 );
 const practicePages = Object.fromEntries(
   PRACTICES.map((practice) => [`practice-${practice.slug}`, page(`practice/${practice.slug}/index.html`)])

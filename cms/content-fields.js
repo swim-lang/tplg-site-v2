@@ -14,7 +14,7 @@ const text = (key, label, fallback) => ({ key, label, type: "text", fallback });
 const textarea = (key, label, fallback) => ({ key, label, type: "textarea", fallback });
 const email = (key, label, fallback) => ({ key, label, type: "email", fallback });
 
-const peopleGroups = PEOPLE.map((person) => ({
+const peopleGroups = PEOPLE.filter((person) => person.profilePublished !== false).map((person) => ({
   page: person.name,
   path: `/people/${person.slug}/`,
   fields: [

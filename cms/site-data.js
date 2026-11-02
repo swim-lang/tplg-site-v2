@@ -90,16 +90,6 @@ export const PEOPLE = [
     admissions: ["California"]
   },
   {
-    key: "graham",
-    slug: "graham-willard",
-    name: "Graham Willard",
-    role: "Associate Attorney",
-    profilePublished: false,
-    portrait: "graham-willard.webp",
-    portraitWidth: 1400,
-    portraitHeight: 1400
-  },
-  {
     key: "kristen",
     slug: "kristen-lippstreu",
     name: "Kristen Lippstreu",

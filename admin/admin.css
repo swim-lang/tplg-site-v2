@@ -233,6 +233,7 @@ textarea {
 }
 
 .editor-sidebar {
+  min-width: 0;
   position: sticky;
   top: 0;
   display: flex;
@@ -337,7 +338,7 @@ textarea {
   }
 
   .editor-shell {
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .editor-sidebar {
@@ -385,3 +386,12 @@ textarea {
     justify-content: space-between;
   }
 }
+fieldset { border: 1px solid #b65a2a55; border-radius: 6px; padding: 24px; margin: 0 0 24px; min-width: 0; }
+fieldset .field { display: grid; margin-bottom: 20px; }
+legend { padding: 0 8px; font-weight: 600; }
+.portrait-previews { display: flex; flex-wrap: wrap; gap: 20px; }
+.portrait-previews figure { margin: 0 0 20px; }
+.portrait-previews img { width: 150px; height: 150px; object-fit: cover; }
+input[type=file] { display: block; max-width: 100%; margin-top: 12px; }
+.editor-toolbar h1 { font-family: var(--sans); font-size: clamp(28px, 4vw, 40px); line-height: 1.2; letter-spacing: -0.02em; overflow-wrap: anywhere; }
+.editor-workspace { padding-top: 40px; min-width: 0; }

@@ -136,7 +136,7 @@ function renderName(person, tagName = "span") {
 function renderPortrait(person, className) {
   if (person.portrait) {
     const portraitClass = person.portraitTopBias ? ' class="portrait-top-biased"' : "";
-    return `<img${portraitClass} src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" loading="lazy" />`;
+    return `<img${portraitClass} data-media-key="${person.key}" src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" loading="lazy" />`;
   }
 
   return `<span class="${className} person-placeholder" role="img" aria-label="Portrait of ${escapeHtml(person.name)} coming soon">
@@ -194,7 +194,7 @@ function renderPeoplePage() {
 
 function renderProfile(person) {
   const portrait = person.portrait
-    ? `<img${person.portraitTopBias ? ' class="portrait-top-biased"' : ""} src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" />`
+    ? `<img${person.portraitTopBias ? ' class="portrait-top-biased"' : ""} data-media-key="${person.key}" src="/assets/${person.portrait}" alt="${escapeHtml(person.name)}" width="${person.portraitWidth}" height="${person.portraitHeight}" />`
     : `<span class="profile-photo-placeholder person-placeholder" role="img" aria-label="Portrait of ${escapeHtml(person.name)} coming soon">
           <span class="person-placeholder-inner">
             <img src="/assets/tplg-main-lockup-ivory.svg" alt="" aria-hidden="true" />
@@ -387,7 +387,7 @@ function renderContactPage() {
 
 function renderInsightsPage() {
   const articles = INSIGHTS.map((article, index) => `
-        <a class="insight-card reveal" href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">
+        <a class="insight-card reveal" data-link-key="insights.${article.key}.url" href="${escapeHtml(article.url)}" target="_blank" rel="noopener noreferrer">
           <span class="insight-number">${String(index + 1).padStart(2, "0")}</span>
           <div class="insight-card-copy">
             <div class="insight-meta">

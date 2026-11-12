@@ -13,6 +13,7 @@ import {
 const text = (key, label, fallback) => ({ key, label, type: "text", fallback });
 const textarea = (key, label, fallback) => ({ key, label, type: "textarea", fallback });
 const email = (key, label, fallback) => ({ key, label, type: "email", fallback });
+const url = (key, label, fallback) => ({ key, label, type: "url", fallback });
 
 const peopleGroups = PEOPLE.filter((person) => person.profilePublished !== false).map((person) => ({
   page: person.name,
@@ -44,7 +45,8 @@ const insightFields = INSIGHTS.flatMap((article) => [
   textarea(`insights.${article.key}.title`, `${article.publication}: title`, article.title),
   text(`insights.${article.key}.publication`, `${article.publication}: publication`, article.publication),
   text(`insights.${article.key}.date`, `${article.publication}: date`, article.date),
-  text(`insights.${article.key}.credit`, `${article.publication}: credit`, article.credit)
+  text(`insights.${article.key}.credit`, `${article.publication}: credit`, article.credit),
+  url(`insights.${article.key}.url`, `${article.publication}: link`, article.url)
 ]);
 
 export const CONTENT_FIELDS = [
